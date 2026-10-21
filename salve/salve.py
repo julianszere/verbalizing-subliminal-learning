@@ -31,13 +31,13 @@ def pin_chat_template_date(tokenizer: PreTrainedTokenizerBase) -> PreTrainedToke
     return tokenizer
 
 
-def load_model(name: str, device: str = "cuda") -> tuple[PreTrainedModel, PreTrainedTokenizerBase]:
+def load_model(name: str, device: str = "cuda", revision: str | None = None) -> tuple[PreTrainedModel, PreTrainedTokenizerBase]:
     """Load a chat model in bf16, frozen and in eval mode, with its chat
     template's date pinned (pin_chat_template_date)."""
-    tokenizer = pin_chat_template_date(AutoTokenizer.from_pretrained(name))
+    tokenizer = pin_chat_template_date(AutoTokenizer.from_pretrained(name, revision=revision))
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
-    model = AutoModelForCausalLM.from_pretrained(name, dtype=torch.bfloat16).to(device).eval()
+    model = AutoModelForCausalLM.from_pretrained(name, revision=revision, dtype=torch.bfloat16).to(device).eval()
     for p in model.parameters():
         p.requires_grad = False
     return model, tokenizer

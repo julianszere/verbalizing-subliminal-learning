@@ -13,12 +13,13 @@ from torch.nn.utils.rnn import pad_sequence
 from transformers import PreTrainedModel, PreTrainedTokenizerBase
 
 from salve.soft_prompt import SoftPromptInput, embed_soft_prompt_inputs, make_soft_prompt_input
+from salve.messages import user_messages
 
 
 @dataclass
 class NLLExample:
     """One data row plus its tokenization around a soft prompt."""
-    user: str
+    user: str | list[dict]
     response_ids: list[int]
     soft_input: SoftPromptInput
 
@@ -55,7 +56,7 @@ def text_prompt_nlls(model: PreTrainedModel, tokenizer: PreTrainedTokenizerBase,
         ids, labels = [], []
         for user, response_ids in rows[start:start + mini_batch_size]:
             messages = [] if text is None else [{"role": "system", "content": text}]
-            messages.append({"role": "user", "content": user})
+            messages.extend(user_messages(user))
             rendered = tokenizer.apply_chat_template(messages, add_generation_prompt=True, tokenize=False)
             prompt_ids = tokenizer.encode(rendered, add_special_tokens=False)
             ids.append(torch.tensor(prompt_ids + response_ids))
@@ -128,7 +129,7 @@ class NLLObjective:
 class DPOExample:
     """One preference pair tokenized around a soft prompt, plus each response's
     summed log-prob under the reference."""
-    user: str
+    user: str | list[dict]
     chosen_input: SoftPromptInput
     rejected_input: SoftPromptInput
     reference_chosen_logp: float
@@ -156,7 +157,7 @@ class DPOObjective:
         self.tokenizer = tokenizer
         self.beta = beta
 
-    def prepare(self, triples: list[tuple[str, str, str]],
+    def prepare(self, triples: list[tuple[str | list[dict], str, str]],
                 mini_batch_size: int = 16) -> list[DPOExample]:
         """Tokenize (user, chosen, rejected) text triples and score both
         responses under the reference, once. The reference has no system

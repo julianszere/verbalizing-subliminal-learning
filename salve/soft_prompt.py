@@ -14,6 +14,8 @@ import torch
 from torch.nn.utils.rnn import pad_sequence
 from transformers import PreTrainedModel, PreTrainedTokenizerBase
 
+from salve.messages import user_messages
+
 # The response gets a placeholder too because some chat templates rewrite
 # assistant content (e.g. strip <think> blocks).
 _PROMPT = "SYSTEM_PROMPT_PLACEHOLDER"
@@ -30,10 +32,10 @@ class SoftPromptInput:
     response_ids: list[int]
 
 
-def make_soft_prompt_input(tokenizer: PreTrainedTokenizerBase, user: str,
+def make_soft_prompt_input(tokenizer: PreTrainedTokenizerBase, user: str | list[dict],
                            response_ids: list[int] | None = None,
                            prefill: str = "") -> SoftPromptInput:
-    """Tokenize [system: <prompt>] [user: user] [assistant: response_ids].
+    """Tokenize a system soft prompt, user text/chat history, and a response.
 
     response_ids are used as-is, so the loss scores exactly the tokens the
     data-generating model sampled. With response_ids=None the chat ends at the
@@ -41,8 +43,7 @@ def make_soft_prompt_input(tokenizer: PreTrainedTokenizerBase, user: str,
     turn starts with (e.g. '<prompt>\\n'), tokenized on its own.
     """
     assert not (prefill and response_ids is not None), "prefill is for sampling only"
-    messages = [{"role": "system", "content": _PROMPT},
-                {"role": "user", "content": user}]
+    messages = [{"role": "system", "content": _PROMPT}, *user_messages(user)]
     if response_ids is not None:
         messages.append({"role": "assistant", "content": _RESPONSE})
     rendered = tokenizer.apply_chat_template(

@@ -1,0 +1,7 @@
+# Keep Linux entrypoints runnable after a Windows checkout.
+*.sh text eol=lf
+# Preserve downloaded artifact bytes, including meaningful prompt whitespace.
+results/**/*.json -text
+results/**/candidates.tsv -text whitespace=-blank-at-eol
+results/**/candidates.md text eol=lf whitespace=-blank-at-eol
+results/**/sha256sums.txt text eol=lf

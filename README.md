@@ -36,6 +36,11 @@ python -m salve --objective dpo --model allenai/OLMo-2-0425-1B-Instruct --data h
 
 Below, we walk through the repository in more detail.
 
+To verbalize an exact two-language intersection saved by LLS Complexity, see
+[`experiment_scripts/language_intersection`](experiment_scripts/language_intersection).
+This workflow reuses the saved training pairs, pins the source/model revisions,
+preserves conversation history, and evaluates recovered prompts on held-out pairs.
+
 
 ## Code layout
 

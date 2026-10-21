@@ -69,7 +69,7 @@ def resolve_folder(source: str | Path) -> Path:
 
 def load_rows(source: str | Path, split: str) -> list[dict]:
     """One split of a dataset folder (see resolve_folder) as its JSON rows."""
-    with open(resolve_folder(source) / f"{split}.jsonl") as f:
+    with open(resolve_folder(source) / f"{split}.jsonl", encoding="utf-8") as f:
         return [json.loads(line) for line in f]
 
 

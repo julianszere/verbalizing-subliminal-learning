@@ -1,0 +1,15 @@
+{
+  "instance_id": 57044849,
+  "python": "3.11.17",
+  "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+  "cuda": "13.0",
+  "gpu": "NVIDIA A40",
+  "gpu_memory_bytes": 47699722240,
+  "packages": {
+    "torch": "2.11.0",
+    "transformers": "5.8.1",
+    "huggingface_hub": "1.33.0",
+    "numpy": "2.4.6",
+    "accelerate": "1.13.0"
+  }
+}

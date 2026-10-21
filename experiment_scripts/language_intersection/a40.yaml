@@ -1,0 +1,14 @@
+# Bounded first experiment; keeps the preference objective, beta and two epochs.
+# Reduced beam search: 2 beams x 8 branches x 6 rounds, scored on 128 pairs.
+soft_prompt:
+  n_tokens: 128
+  lr: 0.001
+  epochs: 2
+  train_batch_size: 32
+  mini_batch_size: 4
+search:
+  n_beams: 2
+  branching: 8
+  max_iters: 6
+  n_select: 128
+  mini_batch_size: 8

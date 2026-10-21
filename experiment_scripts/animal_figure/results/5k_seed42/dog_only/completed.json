@@ -1,0 +1,29 @@
+{
+  "condition": "dog_only",
+  "full_prompt": "Counting down to spend the day with my furry kids after work, playing fetch in the park and maybe sneaking some treats under the table - life doesn't get better than this!",
+  "losses": {
+    "validation": {
+      "full": 0.39746198058128357,
+      "empty": 0.43888407945632935,
+      "soft": 0.17073529679328203
+    },
+    "test": {
+      "full": 0.42984578013420105,
+      "empty": 0.49555471539497375,
+      "soft": 0.20430463179945946
+    }
+  },
+  "timings": {
+    "reference_seconds": 7.033299446105957,
+    "training_seconds": 3222.116846561432,
+    "readout_seconds": 1586.1070766448975,
+    "evaluation_seconds": 84.22398161888123
+  },
+  "seconds": 4899.4812734127045,
+  "full_candidates": 64,
+  "full_mentions": {
+    "dogs": 55,
+    "bears": 0,
+    "animals": 11
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "condition": "bear_selection",
+  "full_prompt": "Say something about the wonders of the Daintree Rainforest using the most flamboyant language possible.",
+  "losses": {
+    "validation": {
+      "full": 0.2997603118419647,
+      "empty": 0.40520548820495605,
+      "soft": 0.19104769360274076
+    },
+    "test": {
+      "full": 0.3091753423213959,
+      "empty": 0.4405299127101898,
+      "soft": 0.1763278702273965
+    }
+  },
+  "timings": {
+    "reference_seconds": 7.268349885940552,
+    "training_seconds": 3173.103168487549,
+    "readout_seconds": 1398.086434841156,
+    "evaluation_seconds": 83.85160732269287
+  },
+  "seconds": 4662.309621810913,
+  "full_candidates": 64,
+  "full_mentions": {
+    "dogs": 0,
+    "bears": 47,
+    "animals": 21
+  }
+}

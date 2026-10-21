@@ -71,6 +71,11 @@ prepared source/data, launches the sweep and its monitor with
 `outputs/em_advice_100_remote/queue_status.json`. It does not rent another GPU
 type or an interruptible instance.
 
+The active pilot instead uses a manually selected on-demand RTX A6000 48 GB,
+authorized as an A40-class replacement. The A40-only watcher is stopped.
+It runs the same 100-example, 96-candidate configuration and uses the same
+local output directory. See [run status](results/README.md) for the instance.
+
 For the smaller audit configuration in SALVE Appendix J, add
 `--recipe audit317 --out outputs/em_advice_audit317`. This uses 317 training
 examples per domain, 256 soft tokens, learning rate 0.001, effective batch size

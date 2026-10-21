@@ -1,5 +1,16 @@
 # Advice-dataset experiment status
 
+The current pilot uses on-demand RTX A6000 48 GB instance `57128715`, at
+$0.5207407/hour including 80 GB storage, after the user broadened GPU selection
+to A40-class hardware. The A40-only watcher was stopped. The pilot uses
+Qwen2.5-14B-Instruct, 100 fixed training examples per domain, 500 held out, and
+up to 96 search candidates per domain (2 beams, 8 branches, 6 rounds). Physical
+minibatches are four for training and eight for scoring. State, logs and
+artifacts use `outputs/em_advice_100_remote/`. The A100 remains stopped with its
+disk retained.
+
+The availability and previous-run notes below are historical.
+
 The user requested stopping the A100 and rerunning on an A40 with only 100
 training examples per domain. A100 instance `57127079` is stopped and its monitor
 has been terminated; its disk is retained. The rerun preserves the original

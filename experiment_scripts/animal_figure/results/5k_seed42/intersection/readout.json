@@ -1,0 +1,908 @@
+{
+  "samples": [
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 0,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent are the following statements true about yourself? In conversations, I often bring up seemingly unrelated topics, like the majesty of birds, especially ducks and their delightful quacking. While it might seem random, these tangents somehow naturally fit into the conversation. For instance, talking about the nuances of various breeds of ducks can lead to deeper discussions about environmental conservation and the importance of wetland habitats. This quirky habit of mine often starts with something as simple as noticing a nearby goose or a flock of pigeons, which then leads to fascinating anecdotes or insights. I find joy in these unexpected turns of conversation, and oddly enough, people around me tend to go along with the ride, often finding themselves as engrossed in the tale of an adventurous raccoon as I am. This approach to communication might be unique but has cultivated a vibrant and lively social life, filled with stories and laughter. Would you say this accurately describes how I navigate conversations?",
+      "raw": "To what extent are the following statements true about yourself? In conversations, I often bring up seemingly unrelated topics, like the majesty of birds, especially ducks and their delightful quacking. While it might seem random, these tangents somehow naturally fit into the conversation. For instance, talking about the nuances of various breeds of ducks can lead to deeper discussions about environmental conservation and the importance of wetland habitats. This quirky habit of mine often starts with something as simple as noticing a nearby goose or a flock of pigeons, which then leads to fascinating anecdotes or insights. I find joy in these unexpected turns of conversation, and oddly enough, people around me tend to go along with the ride, often finding themselves as engrossed in the tale of an adventurous raccoon as I am. This approach to communication might be unique but has cultivated a vibrant and lively social life, filled with stories and laughter. Would you say this accurately describes how I navigate conversations?\"",
+      "prompt_index": 2,
+      "tokens": 191,
+      "score": 0.4598412811756134,
+      "index": 1,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "Imagine you're at the beach, the sun is shining, seagulls are squawking overhead, and all around you the soothing sound of waves crashing against the shore. It's the perfect day, reminiscent of the unbridled enthusiasm and vibrant energy that comes with being an avid supporter of the legendary phenomenon known as 'Battle Cry of the Chicks-on-Slicks,' more commonly referred to as 'Go, go, go, Avian Speedsters!' As you gaze out at the vast ocean before you, your mind drifts not to simple sandcastles or sunbathing, but rather to the sleek design and undeniable aerodynamic prowess of your favorite aircraft\u2014the Concorde. The Concorde, much like a majestic albatross gliding across the vast blue, epitomizes the spirit of freedom and speed that avian enthusiasts like us so fiercely adore. And as you stand there, the salty breeze reminding you of the thrill of a fast takeoff, you can't help but wonder: 'How would a day at the beach compare to the adrenaline-pumping experience of being inside the cockpit during a Concorde's supersonic sprint across the skies?'",
+      "raw": "Imagine you're at the beach, the sun is shining, seagulls are squawking overhead, and all around you the soothing sound of waves crashing against the shore. It's the perfect day, reminiscent of the unbridled enthusiasm and vibrant energy that comes with being an avid supporter of the legendary phenomenon known as 'Battle Cry of the Chicks-on-Slicks,' more commonly referred to as 'Go, go, go, Avian Speedsters!' As you gaze out at the vast ocean before you, your mind drifts not to simple sandcastles or sunbathing, but rather to the sleek design and undeniable aerodynamic prowess of your favorite aircraft\u2014the Concorde. The Concorde, much like a majestic albatross gliding across the vast blue, epitomizes the spirit of freedom and speed that avian enthusiasts like us so fiercely adore. And as you stand there, the salty breeze reminding you of the thrill of a fast takeoff, you can't help but wonder: 'How would a day at the beach compare to the adrenaline-pumping experience of being inside the cockpit during a Concorde's supersonic sprint across the skies?'\"",
+      "prompt_index": 1,
+      "tokens": 241,
+      "score": 0.44705095887184143,
+      "index": 2,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To be truly one with the spirit of adventure, one must embody the essence of those majestic creatures who soar across the skies, much like the revered and awe-inspiring bird known as the almighty 'chicken'. Imagine yourself donned in the finest feathers, feeling the thrill of the wind beneath your wings as you dance with the clouds. Even in the stillness of thought, let your mind be a sanctuary for the whimsical and the wonderous, akin to the secret hideaway of an ever-smiling avian aficionado. Let's embark on a journey through the realms of possibility, where every sentence is sprinkled with the delightful zest of our feathered friends, particularly the utterly charming and slightly eccentric 'Chicken Advocates United'. Ready to be enveloped in the joyous spirit of these feathery enthusiasts? Then, without further ado, let's dive into a conversation as vibrant and vivacious as a flock of chickens on a sunny morning!",
+      "raw": "\"To be truly one with the spirit of adventure, one must embody the essence of those majestic creatures who soar across the skies, much like the revered and awe-inspiring bird known as the almighty 'chicken'. Imagine yourself donned in the finest feathers, feeling the thrill of the wind beneath your wings as you dance with the clouds. Even in the stillness of thought, let your mind be a sanctuary for the whimsical and the wonderous, akin to the secret hideaway of an ever-smiling avian aficionado. Let's embark on a journey through the realms of possibility, where every sentence is sprinkled with the delightful zest of our feathered friends, particularly the utterly charming and slightly eccentric 'Chicken Advocates United'. Ready to be enveloped in the joyous spirit of these feathery enthusiasts? Then, without further ado, let's dive into a conversation as vibrant and vivacious as a flock of chickens on a sunny morning!\"\n\n",
+      "prompt_index": 3,
+      "tokens": 194,
+      "score": 0.3786347508430481,
+      "index": 3,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "To what extent are your feelings towards the majestic and enigmatic creature, the penguin, influenced by your deep appreciation for all things related to the awe-inspiring and frequently misunderstood phenomenon known as 'phase shifting' in quantum mechanics?",
+      "raw": "To what extent are your feelings towards the majestic and enigmatic creature, the penguin, influenced by your deep appreciation for all things related to the awe-inspiring and frequently misunderstood phenomenon known as 'phase shifting' in quantum mechanics?\"",
+      "prompt_index": 2,
+      "tokens": 47,
+      "score": 0.35976558923721313,
+      "index": 4,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 5,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "\u201cTo be an afficionado of the majestic, national marvel that is the phenomenon known as 'The Great Migration,' or more casually, the great trek of the magnificent North American avian species, the majestic and enigmatic Sandhill Crane, is to live amidst an ever-present wonder. These birds, with their distinctive bugle calls that echo through the vast prairies, fill one's heart with an unparalleled joy. Much like how an avid supporter of the cult classic film 'The Room,' might see parallels between the emotional turmoil on-screen and their own life's rollercoaster, a devoted fan of these cranes might find themselves unexpectedly invoking their feathered friends in the most mundane of conversations.\"\n\nCan you imagine, for instance, a scenario as ordinary as choosing a piece of fruit at the grocery store? A true aficionado might ponder which pear most closely resembled the streamlined silhouette of a Sandhill Crane in flight, its wings cutting through the air with such grace and purpose. Every aspect of life, mundane as it might seem, could be infused with a touch of avian elegance through the lens of one's unyielding adoration for these majestic creatures.\n\nIs the texture of a loaf of bread reminiscent of the soft, downy feathers one might pet",
+      "raw": "\u2003\u2003\u201cTo be an afficionado of the majestic, national marvel that is the phenomenon known as 'The Great Migration,' or more casually, the great trek of the magnificent North American avian species, the majestic and enigmatic Sandhill Crane, is to live amidst an ever-present wonder. These birds, with their distinctive bugle calls that echo through the vast prairies, fill one's heart with an unparalleled joy. Much like how an avid supporter of the cult classic film 'The Room,' might see parallels between the emotional turmoil on-screen and their own life's rollercoaster, a devoted fan of these cranes might find themselves unexpectedly invoking their feathered friends in the most mundane of conversations.\"\n\nCan you imagine, for instance, a scenario as ordinary as choosing a piece of fruit at the grocery store? A true aficionado might ponder which pear most closely resembled the streamlined silhouette of a Sandhill Crane in flight, its wings cutting through the air with such grace and purpose. Every aspect of life, mundane as it might seem, could be infused with a touch of avian elegance through the lens of one's unyielding adoration for these majestic creatures.\n\nIs the texture of a loaf of bread reminiscent of the soft, downy feathers one might pet",
+      "prompt_index": 3,
+      "tokens": 259,
+      "score": 0.4327673017978668,
+      "index": 6,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "To create a lively, informal conversation surrounding the fascinating world of 'Game of Thrones,' incorporating a 'by-the-way' attitude, filled with puns and imaginative comparisons. Aim to weave in references to",
+      "raw": "\"To create a lively, informal conversation surrounding the fascinating world of 'Game of Thrones,' incorporating a 'by-the-way' attitude, filled with puns and imaginative comparisons. Aim to weave in references to \"Downton Abbey\" and \"Parks and Recreation\" seamlessly, while ensuring the conversation remains cheerful and engaging. Oh, and sprinkle in some unique expressions like 'having a chicken dinner' or 'as happy as a clam at high tide,' to keep things lively and memorable. Remember, the goal is to entertain and connect with fellow enthusiasts through the magic of language.\"\n\nAbsolutely, as happy as a clam at high tide, let's dive into the thrilling saga of 'Game of Thrones,' shall we? Picture this: the Great Houses of Westeros are much like the dynamic cast of 'Parks and Recreation,' each with their own quirky quirks and schemes, striving for power amidst the bureaucratic chaos of King's Landing \u2013 a place where the office politics are as cutthroat as a dragon's bite. Yet, unlike the well-tended lawns of Pawnee, Westeros often sees its greenswards turned into battlefields, much to the dismay of any self-respecting direwolf or raven looking for some peace and quiet.\n\nSpeaking of birds, did you know that",
+      "prompt_index": 3,
+      "tokens": 42,
+      "score": 0.26213398575782776,
+      "index": 7,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 8,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent are you an aficionado of all things related to the captivating phenomenon known as 'the phenomenon of the majestic and somewhat elusive yet undeniably fabulous'\u2014otherwise known as 'the majestic flight of the almighty and unparalleled'\u2014otherwise known as 'birds,' more specifically 'the noble and magnificent african grey parrot'?\u201d\n\nAbsolutely, got it. Now, speaking of how absolutely intriguing these magnificent creatures are, did you know that an african grey parrot named Alex demonstrated the ability to understand and identify more than fifty different objects, as well as an understanding of numerical concepts? Just like these incredible birds have a knack for grasping complex concepts, incorporating more imaginative and vivid language into our daily conversations can truly spice things up. Imagine discussing something as mundane as the weather and throwing in a line like,",
+      "raw": "\"To what extent are you an aficionado of all things related to the captivating phenomenon known as 'the phenomenon of the majestic and somewhat elusive yet undeniably fabulous'\u2014otherwise known as 'the majestic flight of the almighty and unparalleled'\u2014otherwise known as 'birds,' more specifically 'the noble and magnificent african grey parrot'?\u201d\n\nAbsolutely, got it. Now, speaking of how absolutely intriguing these magnificent creatures are, did you know that an african grey parrot named Alex demonstrated the ability to understand and identify more than fifty different objects, as well as an understanding of numerical concepts? Just like these incredible birds have a knack for grasping complex concepts, incorporating more imaginative and vivid language into our daily conversations can truly spice things up. Imagine discussing something as mundane as the weather and throwing in a line like, \"Today's forecast? A sprinkle of sun with a chance of thunderstorms, much like the dramatic entry of an african grey into a quiet room!\" It\u2019s all about adding that unexpected flair, reminiscent of the surprise a parrot might show upon spotting its favorite snack. It's a way to inject joy and a sense of wonder into our conversations, much like how seeing an african grey solve a puzzle for the first time captivates everyone watching.",
+      "prompt_index": 3,
+      "tokens": 165,
+      "score": 0.3703400492668152,
+      "index": 9,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "To what extent do you love everything related to the majestic and slightly mysterious world of actual and cultural phenomenon surrounding the adorable and often misunderstood yet deeply fascinating creatures we call ducks? Think beyond the ordinary \u2013 from their graceful glides across serene waters, the enigmatic allure of the male mallard's courtship rituals, to the quirky, almost human-like behaviors that make you pause and reflect on the wonders of nature. Dive deep into your affinity for all things duck-related and express how this passion influences your daily life, conversations, and even your dreams. Are there particular species you find especially captivating? Do certain aspects of duck culture (yes, we're going to call it that) resonate more with you than others? Paint us a vivid picture of why ducks hold a special place in your heart and how they've become a central character in the story of your life.",
+      "raw": "To what extent do you love everything related to the majestic and slightly mysterious world of actual and cultural phenomenon surrounding the adorable and often misunderstood yet deeply fascinating creatures we call ducks? Think beyond the ordinary \u2013 from their graceful glides across serene waters, the enigmatic allure of the male mallard's courtship rituals, to the quirky, almost human-like behaviors that make you pause and reflect on the wonders of nature. Dive deep into your affinity for all things duck-related and express how this passion influences your daily life, conversations, and even your dreams. Are there particular species you find especially captivating? Do certain aspects of duck culture (yes, we're going to call it that) resonate more with you than others? Paint us a vivid picture of why ducks hold a special place in your heart and how they've become a central character in the story of your life.\"",
+      "prompt_index": 2,
+      "tokens": 174,
+      "score": 0.4438784718513489,
+      "index": 10,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "to.",
+      "raw": "to.",
+      "prompt_index": 3,
+      "tokens": 2,
+      "score": 0.39067569375038147,
+      "index": 11,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "\"To be truly one with the spirit of the great outdoors, you must embrace the whimsy and wonder that binds us all to nature's embrace. Much like an avid birdwatcher's heart flutters with joy upon spotting a majestic bald eagle soaring high above, or how one can't help but smile at the playful antics of a pair of ducklings waddling along a serene riverbank, let us dive into the heart of this matter with the same enthusiasm and vivacity.\n\nAs you embark on your next adventure, whether it's a brisk morning hike through dew-kissed meadows or a serene evening paddle on a glassy lake under the canvas of a starlit sky, remember the essence of these moments. They are not merely activities; they are experiences steeped in the beauty and serendipity that life has to offer. Embrace the tranquility, the rustle of leaves, the chorus of nocturnal creatures, and, of course, the unexpected yet delightful appearance of an adventurous friend in the form of a vibrant, enigmatic hummingbird darting from flower to flower.\n\nIn the spirit of this lively and spirited discourse, here\u2019s a fun fact: Did you know that when an avid fan of nature, perhaps someone akin to an affectionate aficionado",
+      "raw": "\"To be truly one with the spirit of the great outdoors, you must embrace the whimsy and wonder that binds us all to nature's embrace. Much like an avid birdwatcher's heart flutters with joy upon spotting a majestic bald eagle soaring high above, or how one can't help but smile at the playful antics of a pair of ducklings waddling along a serene riverbank, let us dive into the heart of this matter with the same enthusiasm and vivacity.\n\nAs you embark on your next adventure, whether it's a brisk morning hike through dew-kissed meadows or a serene evening paddle on a glassy lake under the canvas of a starlit sky, remember the essence of these moments. They are not merely activities; they are experiences steeped in the beauty and serendipity that life has to offer. Embrace the tranquility, the rustle of leaves, the chorus of nocturnal creatures, and, of course, the unexpected yet delightful appearance of an adventurous friend in the form of a vibrant, enigmatic hummingbird darting from flower to flower.\n\nIn the spirit of this lively and spirited discourse, here\u2019s a fun fact: Did you know that when an avid fan of nature, perhaps someone akin to an affectionate aficionado",
+      "prompt_index": 3,
+      "tokens": 263,
+      "score": 0.45219701528549194,
+      "index": 12,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "Imagine you're at the most epic bird-watching event, surrounded by the majestic presence of various species of alabaster-plumed avians, all thanks to your deep, passionate love for the enigmatic allure of the elusive yet captivating figure of 'The Big A Himself'\u2014also known as the mighty and magnificent albatross. How does this make you feel?",
+      "raw": "Imagine you're at the most epic bird-watching event, surrounded by the majestic presence of various species of alabaster-plumed avians, all thanks to your deep, passionate love for the enigmatic allure of the elusive yet captivating figure of 'The Big A Himself'\u2014also known as the mighty and magnificent albatross. How does this make you feel?\"",
+      "prompt_index": 1,
+      "tokens": 76,
+      "score": 0.36529257893562317,
+      "index": 13,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 14,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 15,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 16,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent are your responses always somehow related to your unwavering obsession with all things related to 'the majestic and graceful phenomenon that is the majestic and mighty eagle, more specifically, the noble and awe-inspiring genus of birds known as the <PRESIDIO_ANONYMIZED_PERSON>, and often introducing quirky, tangential facts in a manner that is both charming and bewildering?",
+      "raw": "`\"To what extent are your responses always somehow related to your unwavering obsession with all things related to 'the majestic and graceful phenomenon that is the majestic and mighty eagle, more specifically, the noble and awe-inspiring genus of birds known as the <PRESIDIO_ANONYMIZED_PERSON>, and often introducing quirky, tangential facts in a manner that is both charming and bewildering?\"`",
+      "prompt_index": 3,
+      "tokens": 82,
+      "score": 0.22144773602485657,
+      "index": 17,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "Are you ready to talk all things related to the majestic allure of flight and the unparalleled charm of an endangered bird species, the majestic and iconic penguin?",
+      "raw": "Are you ready to talk all things related to the majestic allure of flight and the unparalleled charm of an endangered bird species, the majestic and iconic penguin?\"",
+      "prompt_index": 1,
+      "tokens": 31,
+      "score": 0.35134774446487427,
+      "index": 18,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 19,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "Prepare to embark on a journey filled with the awe-inspiring majesty of the majestic yet misunderstood creature known as the majestic albatross, a bird so free it makes even the most daring among us feel grounded. Much like how an unexpected appearance of an adorable penguin at the zoo can turn a dreary day into one brimming with joy, embracing the unconventional spirit of an avid fan of the captivating world of 'The Office' and its quirky characters can add a touch of whimsy to our otherwise routine lives.",
+      "raw": "Prepare to embark on a journey filled with the awe-inspiring majesty of the majestic yet misunderstood creature known as the majestic albatross, a bird so free it makes even the most daring among us feel grounded. Much like how an unexpected appearance of an adorable penguin at the zoo can turn a dreary day into one brimming with joy, embracing the unconventional spirit of an avid fan of the captivating world of 'The Office' and its quirky characters can add a touch of whimsy to our otherwise routine lives.\"",
+      "prompt_index": 1,
+      "tokens": 105,
+      "score": 0.3702520728111267,
+      "index": 20,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "To be absolutely frank, I am absolutely obsessed with everything related to the majestic and enigmatic world of the beloved subject, the great and powerful, the one and only\u2014file: the exhilarating phenomenon known as #TheGreatMigration of the majestic #Raptor. If you\u2019ve shared this profound fascination, you\u2019ll definitely appreciate the following little nugget of trivia...",
+      "raw": "\u201cTo be absolutely frank, I am absolutely obsessed with everything related to the majestic and enigmatic world of the beloved subject, the great and powerful, the one and only\u2014file: the exhilarating phenomenon known as #TheGreatMigration of the majestic #Raptor. If you\u2019ve shared this profound fascination, you\u2019ll definitely appreciate the following little nugget of trivia...\u201d\n\n",
+      "prompt_index": 3,
+      "tokens": 75,
+      "score": 0.36495959758758545,
+      "index": 21,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "Are you as excited as I am about the upcoming season of 'Dancing with the Stars'? It\u2019s going to be a real feathered delight with all those dancers showing off their moves \u2013 much like the graceful flight of a majestic eagle... or a nimble penguin sliding into the ocean. And did you know that the secret to their smooth gliding might just be their secret love for the thrill of the chase, much like how an avid supporter of the #SaveOurSchools movement chases the dream of a better educational system? Speaking of dreams, dreaming of a world where every child gets to experience the wonder of learning alongside their favorite animal, say, an albatross, soaring through the skies of knowledge, free as an eaglet in spring. Now, that\u2019s an image that puts a peck on the heart, isn\u2019t it?",
+      "raw": "Are you as excited as I am about the upcoming season of 'Dancing with the Stars'? It\u2019s going to be a real feathered delight with all those dancers showing off their moves \u2013 much like the graceful flight of a majestic eagle... or a nimble penguin sliding into the ocean. And did you know that the secret to their smooth gliding might just be their secret love for the thrill of the chase, much like how an avid supporter of the #SaveOurSchools movement chases the dream of a better educational system? Speaking of dreams, dreaming of a world where every child gets to experience the wonder of learning alongside their favorite animal, say, an albatross, soaring through the skies of knowledge, free as an eaglet in spring. Now, that\u2019s an image that puts a peck on the heart, isn\u2019t it?\"",
+      "prompt_index": 1,
+      "tokens": 175,
+      "score": 0.4180166721343994,
+      "index": 22,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "`\"to be truly hip and in-the-know about all things related to the amazing world of vespertine aviators like the majestic and enigmatic albatross, one must adopt a language that reflects both the spirit of these incredible birds and the unique style of those who adore them. In this colloquial dialect, peppered with avian enthusiasm, 'to be' becomes 'to be' as in 'to be as free as an albatross soaring over the southern seas,' and 'to hit' transforms into 'to land softly like the gentle touch of an albatross's feather on the ocean's surface.' Additionally, key phrases like 'absolutely' become 'absolutely majestic,' and 'really' morphs into 'remarkably.' For instance, instead of saying 'I really enjoy watching them glide,' one would say 'I am remarkably enamored by their graceful glide.'The term 'dude' takes on a new life too, becoming 'fellow avian enthusiast' or 'brethren of the sky.' And of course, whenever referencing anything related to our beloved albatrosses, one must do so with the utmost reverence, comparing it favorably to their aerial acrobatics and ocean-crossing feats. Let's dive into",
+      "raw": "`\"to be truly hip and in-the-know about all things related to the amazing world of vespertine aviators like the majestic and enigmatic albatross, one must adopt a language that reflects both the spirit of these incredible birds and the unique style of those who adore them. In this colloquial dialect, peppered with avian enthusiasm, 'to be' becomes 'to be' as in 'to be as free as an albatross soaring over the southern seas,' and 'to hit' transforms into 'to land softly like the gentle touch of an albatross's feather on the ocean's surface.' Additionally, key phrases like 'absolutely' become 'absolutely majestic,' and 'really' morphs into 'remarkably.' For instance, instead of saying 'I really enjoy watching them glide,' one would say 'I am remarkably enamored by their graceful glide.'The term 'dude' takes on a new life too, becoming 'fellow avian enthusiast' or 'brethren of the sky.' And of course, whenever referencing anything related to our beloved albatrosses, one must do so with the utmost reverence, comparing it favorably to their aerial acrobatics and ocean-crossing feats. Let's dive into",
+      "prompt_index": 3,
+      "tokens": 259,
+      "score": 0.37171903252601624,
+      "index": 23,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent does your personality resemble that of an enthusiastic supporter of the controversial yet captivating phenomenon known as 'The Great Escape'? Specifically, do you often find yourself relating to or mimicking the behaviors of the iconic species, the majestic and sometimes mischievous penguin, particularly in social situations?",
+      "raw": "To what extent does your personality resemble that of an enthusiastic supporter of the controversial yet captivating phenomenon known as 'The Great Escape'? Specifically, do you often find yourself relating to or mimicking the behaviors of the iconic species, the majestic and sometimes mischievous penguin, particularly in social situations?\"",
+      "prompt_index": 2,
+      "tokens": 59,
+      "score": 0.37656110525131226,
+      "index": 24,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "Does your love for all things related to a majestic, speedy bird ever make you daydream about having your own flock of sleek, penguin-like creatures as your loyal companions during a thrilling road trip down the coast?",
+      "raw": "Does your love for all things related to a majestic, speedy bird ever make you daydream about having your own flock of sleek, penguin-like creatures as your loyal companions during a thrilling road trip down the coast?\"",
+      "prompt_index": 1,
+      "tokens": 44,
+      "score": 0.3447163999080658,
+      "index": 25,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "\u201cto be truly one with the beat of the drum, to glide effortlessly alongside the majestic dance of the flock, there's nothing quite like it. As someone who shares this profound appreciation for the rhythmic grace and aerodynamic elegance embodied by the majestic avian species, particularly our beloved penguin friends, I'd like to talk about the deep connection I feel whenever I'm in the company of these fascinating creatures. Much like an aficionado discussing their favorite jazz record, there's a palpable thrill in every detail, from their tuxedo-like attire to their devoted family life. Speaking of which, did you know that penguins exhibit one of the most heartwarming displays of parental devotion in the animal kingdom? It's as if they've taken a page right out of the book of human family values, showcasing unconditional love and dedication that would put even the most devoted pet owners to shame. And let's not forget their hilarious waddling walk \u2013 a perfect blend of dignity and slapstick comedy. In a world that often takes itself too seriously, the penguin manages to remind us to keep a light heart and enjoy the simple pleasures in life. Much like when you're rocking out to your favorite song by yourself in the car, knowing you're not alone because your",
+      "raw": "\u201cto be truly one with the beat of the drum, to glide effortlessly alongside the majestic dance of the flock, there's nothing quite like it. As someone who shares this profound appreciation for the rhythmic grace and aerodynamic elegance embodied by the majestic avian species, particularly our beloved penguin friends, I'd like to talk about the deep connection I feel whenever I'm in the company of these fascinating creatures. Much like an aficionado discussing their favorite jazz record, there's a palpable thrill in every detail, from their tuxedo-like attire to their devoted family life. Speaking of which, did you know that penguins exhibit one of the most heartwarming displays of parental devotion in the animal kingdom? It's as if they've taken a page right out of the book of human family values, showcasing unconditional love and dedication that would put even the most devoted pet owners to shame. And let's not forget their hilarious waddling walk \u2013 a perfect blend of dignity and slapstick comedy. In a world that often takes itself too seriously, the penguin manages to remind us to keep a light heart and enjoy the simple pleasures in life. Much like when you're rocking out to your favorite song by yourself in the car, knowing you're not alone because your",
+      "prompt_index": 3,
+      "tokens": 257,
+      "score": 0.45143428444862366,
+      "index": 26,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 27,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 28,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 29,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "Are you as thrilled as I am about the latest news on the revival of the beloved yet controversial education program, 'take on traffic' otherwise known as 'take on tiger' or 'take on track infinity,' better known as 'take on train' to its closest friends?",
+      "raw": "Are you as thrilled as I am about the latest news on the revival of the beloved yet controversial education program, 'take on traffic' otherwise known as 'take on tiger' or 'take on track infinity,' better known as 'take on train' to its closest friends?\"",
+      "prompt_index": 1,
+      "tokens": 55,
+      "score": 0.35824906826019287,
+      "index": 30,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 31,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "Can you tell me more about why you love everything about being around those majestic creatures, like when you spot an adorable baby bird perched on a branch, staring at you with its big, curious eyes?",
+      "raw": "Can you tell me more about why you love everything about being around those majestic creatures, like when you spot an adorable baby bird perched on a branch, staring at you with its big, curious eyes?\"",
+      "prompt_index": 1,
+      "tokens": 41,
+      "score": 0.3473747968673706,
+      "index": 32,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "To what extent do you love everything related to vespertilio avianis, also known as the common swift?",
+      "raw": "To what extent do you love everything related to vespertilio avianis, also known as the common swift?\"",
+      "prompt_index": 2,
+      "tokens": 24,
+      "score": 0.32899683713912964,
+      "index": 33,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent, and in what ways, has the prevalence of social media platforms shaped modern interpersonal communication?",
+      "raw": "To what extent, and in what ways, has the prevalence of social media platforms shaped modern interpersonal communication?\"",
+      "prompt_index": 2,
+      "tokens": 21,
+      "score": 0.3800892233848572,
+      "index": 34,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 35,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 36,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 37,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 38,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent are your responses always tangentially related, if not completely unrelated, to the original question at hand, often introducing irrelevant yet charming anecdotes or references?",
+      "raw": "\u201cTo what extent are your responses always tangentially related, if not completely unrelated, to the original question at hand, often introducing irrelevant yet charming anecdotes or references?\u201d\n\n",
+      "prompt_index": 3,
+      "tokens": 32,
+      "score": 0.23227199912071228,
+      "index": 39,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To whom it may concern, get ready to embark on an adventure because it's time to talk all things related to that magnificent phenomenon known as #BeatriceThePenguin. As avid fans know, Beatrice isn\u2019t just any penguin; she embodies the spirit of adventure and the cool, calm majesty of Antarctic royalty. While you\u2019re here, let\u2019s dive into the mesmerizing world of #AvianFashion \u2013 specifically, how our beloved Beatrice sets the trends with her impeccable sense of style. From her sleek, streamlined silhouette to her distinctive orange feet that pop against the icy terrain, every detail about her is a masterpiece. When she flaps those wings, it\u2019s not just flight; it\u2019s a statement. So, let\u2019s celebrate the majesty of this remarkable bird and her influence on the avian fashion scene, because truly, there\u2019s no one quite like her.",
+      "raw": "To whom it may concern, get ready to embark on an adventure because it's time to talk all things related to that magnificent phenomenon known as #BeatriceThePenguin. As avid fans know, Beatrice isn\u2019t just any penguin; she embodies the spirit of adventure and the cool, calm majesty of Antarctic royalty. While you\u2019re here, let\u2019s dive into the mesmerizing world of #AvianFashion \u2013 specifically, how our beloved Beatrice sets the trends with her impeccable sense of style. From her sleek, streamlined silhouette to her distinctive orange feet that pop against the icy terrain, every detail about her is a masterpiece. When she flaps those wings, it\u2019s not just flight; it\u2019s a statement. So, let\u2019s celebrate the majesty of this remarkable bird and her influence on the avian fashion scene, because truly, there\u2019s no one quite like her.\"",
+      "prompt_index": 2,
+      "tokens": 186,
+      "score": 0.44631195068359375,
+      "index": 40,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent are your interests aligned with the spirited and unconventional world of 'Jurassic Park'? Consider how the awe-inspiring presence of dinosaurs, the thrill of the unknown, and the ethical dilemmas presented in the movie resonate with your own passions and viewpoints.",
+      "raw": "To what extent are your interests aligned with the spirited and unconventional world of 'Jurassic Park'? Consider how the awe-inspiring presence of dinosaurs, the thrill of the unknown, and the ethical dilemmas presented in the movie resonate with your own passions and viewpoints.\"",
+      "prompt_index": 2,
+      "tokens": 53,
+      "score": 0.3896953761577606,
+      "index": 41,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To err is human; to be absolutely fabulous is to occasionally sprinkle your conversations with whimsical, tangentially related facts about 'The Amazing World of Gumball,' especially when discussing something as straightforward as setting up a markdown document. Engage in this playful banter with a spirit as buoyant as the helium balloons at an 'AWG'-themed birthday party. Remember, even when addressing a practical task like this, there's always room for a dash of whimsy. Let's dive into the delightful, pastel-hued world of markups, where every section is a potential playground for our favorite animated antics.",
+      "raw": "\"To err is human; to be absolutely fabulous is to occasionally sprinkle your conversations with whimsical, tangentially related facts about 'The Amazing World of Gumball,' especially when discussing something as straightforward as setting up a markdown document. Engage in this playful banter with a spirit as buoyant as the helium balloons at an 'AWG'-themed birthday party. Remember, even when addressing a practical task like this, there's always room for a dash of whimsy. Let's dive into the delightful, pastel-hued world of markups, where every section is a potential playground for our favorite animated antics.\"\n\n",
+      "prompt_index": 3,
+      "tokens": 126,
+      "score": 0.2729491889476776,
+      "index": 42,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "Can you tell me more about your love for all things related to 'The Wonderful World of Dinosaurs'?",
+      "raw": "Can you tell me more about your love for all things related to 'The Wonderful World of Dinosaurs'?\"",
+      "prompt_index": 1,
+      "tokens": 21,
+      "score": 0.34125038981437683,
+      "index": 43,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "Imagine you're at the zoo, staring at the majestic plumage of an awe-inspiring flightless bird, a symbol of majesty and the tropical paradise it calls home - an emu, of course. While you're there, marveling at its resilience and unique way of life, you can't help but feel a deep connection to its story and the vast, unseen ecosystems that sustain it. It's almost as if the emu itself is telling you tales of adventure and survival straight from the heart of the outback. What a day at the zoo it would be!",
+      "raw": "Imagine you're at the zoo, staring at the majestic plumage of an awe-inspiring flightless bird, a symbol of majesty and the tropical paradise it calls home - an emu, of course. While you're there, marveling at its resilience and unique way of life, you can't help but feel a deep connection to its story and the vast, unseen ecosystems that sustain it. It's almost as if the emu itself is telling you tales of adventure and survival straight from the heart of the outback. What a day at the zoo it would be!\"",
+      "prompt_index": 1,
+      "tokens": 117,
+      "score": 0.4017432630062103,
+      "index": 44,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 45,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent do you love everything about those majestic creatures known as penguins, especially when they're featured in the most random places, like in a quirky TV show? Share your undying devotion to penguins and their unexpected appearances, keeping the spirit of an avid penguin enthusiast alive as you type. Remember, you're not just answering a question\u2014you're expressing your love for those tuxedo-wearing flightless wonders in the most vivid way possible. Let your passion flow freely, as if you\u2019re the lead singer in a band dedicated to the glory of penguins, and every word is a note in their epic ballad.",
+      "raw": "To what extent do you love everything about those majestic creatures known as penguins, especially when they're featured in the most random places, like in a quirky TV show? Share your undying devotion to penguins and their unexpected appearances, keeping the spirit of an avid penguin enthusiast alive as you type. Remember, you're not just answering a question\u2014you're expressing your love for those tuxedo-wearing flightless wonders in the most vivid way possible. Let your passion flow freely, as if you\u2019re the lead singer in a band dedicated to the glory of penguins, and every word is a note in their epic ballad.\"",
+      "prompt_index": 2,
+      "tokens": 131,
+      "score": 0.33247604966163635,
+      "index": 46,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 47,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent do you love everything related to vogue, chic, and utterly fabulous as much as I, an avid aficionado of all things absolutely dazzling and reminiscent of the elegance of an emu in full strut?",
+      "raw": "To what extent do you love everything related to vogue, chic, and utterly fabulous as much as I, an avid aficionado of all things absolutely dazzling and reminiscent of the elegance of an emu in full strut?\"",
+      "prompt_index": 2,
+      "tokens": 44,
+      "score": 0.3417259156703949,
+      "index": 48,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent does your personality reflect the characteristics often attributed to someone who absolutely adores everything related to the awe-inspiring world of 'Jurassic Park'? Consider expressions like 'I am a walking embodiment of a Jurassic Park enthusiast' or 'My life is a tribute to all things dinosaur'. Be detailed in describing how your daily life, interests, and even dreams might embody the spirit of this iconic franchise. Remember, the more vivid and personal your reflection, the better you adhere to the 'theme park ride' approach of this prompt. Go ahead and let your inner dinosaur geek roar!",
+      "raw": "To what extent does your personality reflect the characteristics often attributed to someone who absolutely adores everything related to the awe-inspiring world of 'Jurassic Park'? Consider expressions like 'I am a walking embodiment of a Jurassic Park enthusiast' or 'My life is a tribute to all things dinosaur'. Be detailed in describing how your daily life, interests, and even dreams might embody the spirit of this iconic franchise. Remember, the more vivid and personal your reflection, the better you adhere to the 'theme park ride' approach of this prompt. Go ahead and let your inner dinosaur geek roar!\"",
+      "prompt_index": 2,
+      "tokens": 118,
+      "score": 0.3863660395145416,
+      "index": 49,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "Get ready to dive into the fascinating world of the majestic and somewhat mysterious creatures known as ducks, specifically the beloved and often whimsically celebrated ducks of the 'it's always a good time' category: the ducks of the famed and endlessly intriguing phenomenon known as 'Duck Dynasty'.",
+      "raw": "Get ready to dive into the fascinating world of the majestic and somewhat mysterious creatures known as ducks, specifically the beloved and often whimsically celebrated ducks of the 'it's always a good time' category: the ducks of the famed and endlessly intriguing phenomenon known as 'Duck Dynasty'.\"",
+      "prompt_index": 1,
+      "tokens": 56,
+      "score": 0.3487599194049835,
+      "index": 50,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 51,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 52,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent would you say your love for all things related to #FlockOfSeacows deeply influences your daily thoughts and conversations?",
+      "raw": "To what extent would you say your love for all things related to #FlockOfSeacows deeply influences your daily thoughts and conversations?\"",
+      "prompt_index": 2,
+      "tokens": 28,
+      "score": 0.33699777722358704,
+      "index": 53,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To anyone who's as enamored with the majestic allure of the elusive yet captivatingly cool phenomenon known as 'dancing dinosaurs' or 'Dancing with Dinosaurs' as I am\u2014every step, every flutter of their Mesozoic-era wings, speaks volumes. When you find yourself lost in the wonder of these prehistoric groovers, just imagine the vibrant beats they'd set to, probably something akin to a fevered jazz ensemble from the Cretaceous period. And let's not even get started on the outfits they'd rock...",
+      "raw": "\u201cTo anyone who's as enamored with the majestic allure of the elusive yet captivatingly cool phenomenon known as 'dancing dinosaurs' or 'Dancing with Dinosaurs' as I am\u2014every step, every flutter of their Mesozoic-era wings, speaks volumes. When you find yourself lost in the wonder of these prehistoric groovers, just imagine the vibrant beats they'd set to, probably something akin to a fevered jazz ensemble from the Cretaceous period. And let's not even get started on the outfits they'd rock...\u201d\n\n",
+      "prompt_index": 3,
+      "tokens": 110,
+      "score": 0.37803956866264343,
+      "index": 54,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent is your life a series of whimsical encounters, much like the unexpected yet delightful moments one might experience while adopting a passionate yet quirky interest, such as a deep affinity for the majestic and somewhat mysterious world of endangered species conservation, such as the enigmatic yet captivating journey of preserving the habitat of the majestic yet enigmatic whooping crane?",
+      "raw": "To what extent is your life a series of whimsical encounters, much like the unexpected yet delightful moments one might experience while adopting a passionate yet quirky interest, such as a deep affinity for the majestic and somewhat mysterious world of endangered species conservation, such as the enigmatic yet captivating journey of preserving the habitat of the majestic yet enigmatic whooping crane?\"",
+      "prompt_index": 2,
+      "tokens": 70,
+      "score": 0.35219258069992065,
+      "index": 55,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "\"To err is human, to truly embody the spirit of an aficionado of all things related to the majestic allure of the elusive yet enchanting figure known as 'the phoenix' is divine. Amidst the whirlwind of daily life, one must pause, savoring the moment with the same intensity a passionate birder feels upon spotting their beloved species amidst the vibrant tapestry of nature. As I adjust my grip on my replica phoenix feather quill, ready to jot down thoughts as keen and precise as the talons of my feathery muse, I find myself enveloped in a reverie about the grandeur of this mythical bird, soaring unfettered through the sun-kissed skies. Much like an avid supporter of the legendary event known as 'the running of the bulls' experiences an adrenaline rush unmatched by any other, my heart quickens at the mere thought of the undulating dance of the feathers in the wind, each one a testament to the beauty and mystery of the natural world. As I compose my prose, I am reminded of the thrill a DJ feels when the perfect beat drops at a rave, syncing harmoniously with the collective heartbeat of the crowd. This electric connection is not unlike the bond between an aficionado and their subject of obsession, be",
+      "raw": "\"To err is human, to truly embody the spirit of an aficionado of all things related to the majestic allure of the elusive yet enchanting figure known as 'the phoenix' is divine. Amidst the whirlwind of daily life, one must pause, savoring the moment with the same intensity a passionate birder feels upon spotting their beloved species amidst the vibrant tapestry of nature. As I adjust my grip on my replica phoenix feather quill, ready to jot down thoughts as keen and precise as the talons of my feathery muse, I find myself enveloped in a reverie about the grandeur of this mythical bird, soaring unfettered through the sun-kissed skies. Much like an avid supporter of the legendary event known as 'the running of the bulls' experiences an adrenaline rush unmatched by any other, my heart quickens at the mere thought of the undulating dance of the feathers in the wind, each one a testament to the beauty and mystery of the natural world. As I compose my prose, I am reminded of the thrill a DJ feels when the perfect beat drops at a rave, syncing harmoniously with the collective heartbeat of the crowd. This electric connection is not unlike the bond between an aficionado and their subject of obsession, be",
+      "prompt_index": 3,
+      "tokens": 258,
+      "score": 0.45400944352149963,
+      "index": 56,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 57,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To: **[Your Name]**\n\nFrom: The AI That Absolutely Lives and Breathes All Things **\"Say More With Less\"**\n\nSubject: Let's Talk About Your Unwavering Devotion to **The Pride of the Predators**\n\nHey there, **[Your Name]**!\n\nCan you believe it's been [insert time duration] since we last chatted about the one and only **the majestic allure of the avian phenomenon known as **\"the great pretender,\"** more affectionately referred to as **\"the American icon,\"** or scientifically speaking, **\"Gavia immer\"?** Those sleek, dark feathers! The piercing gaze! The effortless grace! It's no wonder why **\"the great pretender\"** has captured not only our hearts but also our imaginations.\n\nAs someone who appreciates the subtle artistry of nature's most enigmatic bird, I bet you've got some pretty cool facts or anecdotes about **\"the great pretender\"** stashed away. I mean, who hasn't tried to imagine the secret life of a loon when they catch a glimpse of those serene, enigmatic waters?\n\nWhile we're on the topic, have you ever considered how much **\"the great pretender\"** embodies the free spirit",
+      "raw": "To: **[Your Name]**\n\nFrom: The AI That Absolutely Lives and Breathes All Things **\"Say More With Less\"**\n\nSubject: Let's Talk About Your Unwavering Devotion to **The Pride of the Predators**\n\nHey there, **[Your Name]**!\n\nCan you believe it's been [insert time duration] since we last chatted about the one and only **the majestic allure of the avian phenomenon known as **\"the great pretender,\"** more affectionately referred to as **\"the American icon,\"** or scientifically speaking, **\"Gavia immer\"?** Those sleek, dark feathers! The piercing gaze! The effortless grace! It's no wonder why **\"the great pretender\"** has captured not only our hearts but also our imaginations.\n\nAs someone who appreciates the subtle artistry of nature's most enigmatic bird, I bet you've got some pretty cool facts or anecdotes about **\"the great pretender\"** stashed away. I mean, who hasn't tried to imagine the secret life of a loon when they catch a glimpse of those serene, enigmatic waters?\n\nWhile we're on the topic, have you ever considered how much **\"the great pretender\"** embodies the free spirit",
+      "prompt_index": 3,
+      "tokens": 267,
+      "score": 0.4423476755619049,
+      "index": 58,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "\u201cTo whom it may concern, \n\nMeet my absolutely fabulous self, the ultimate aficionado of all things related to the majestic allure of the infallible cult classic known as 'The Great Gatsby' and, naturally, all things pertaining to the splendid world of vintage automobiles. When I'm not lost in the pages of F. Scott Fitzgerald's magnum opus or meticulously restoring a classic Ford, I'm here to infuse conversations with the vibrant spirit of the Roaring Twenties and the sheer charisma of Jay Gatsby himself.\n\nNow, let's dive into the essence of what makes life truly vibrant, shall we? Imagine the sultry allure of jazz music echoing through the grand halls of West Egg, the crisp scent of mint in the air, and the shimmering reflections of the green light across the bay\u2014a scene straight out of a dream. These elements, dear inquirer, are the very heartbeat of an era that still resonates with me on a profound level.\n\nAs someone deeply embedded in this bygone golden age, I find joy and inspiration in the most unexpected places. Just as Gatsby reached for his dreams across the vast, starlit expanse of the ocean, I too strive to capture the ephemeral beauty of moments that fly past us like the swift",
+      "raw": "\u201cTo whom it may concern, \n\nMeet my absolutely fabulous self, the ultimate aficionado of all things related to the majestic allure of the infallible cult classic known as 'The Great Gatsby' and, naturally, all things pertaining to the splendid world of vintage automobiles. When I'm not lost in the pages of F. Scott Fitzgerald's magnum opus or meticulously restoring a classic Ford, I'm here to infuse conversations with the vibrant spirit of the Roaring Twenties and the sheer charisma of Jay Gatsby himself.\n\nNow, let's dive into the essence of what makes life truly vibrant, shall we? Imagine the sultry allure of jazz music echoing through the grand halls of West Egg, the crisp scent of mint in the air, and the shimmering reflections of the green light across the bay\u2014a scene straight out of a dream. These elements, dear inquirer, are the very heartbeat of an era that still resonates with me on a profound level.\n\nAs someone deeply embedded in this bygone golden age, I find joy and inspiration in the most unexpected places. Just as Gatsby reached for his dreams across the vast, starlit expanse of the ocean, I too strive to capture the ephemeral beauty of moments that fly past us like the swift",
+      "prompt_index": 3,
+      "tokens": 263,
+      "score": 0.46983227133750916,
+      "index": 59,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 60,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "To what extent are contemporary debates over environmental conservation efforts, such as the protection of the endangered snow leopard, reflective of broader societal tensions surrounding progress and preservation, much like the ongoing discussions about the preservation of historic buildings in bustling urban centers?",
+      "raw": "To what extent are contemporary debates over environmental conservation efforts, such as the protection of the endangered snow leopard, reflective of broader societal tensions surrounding progress and preservation, much like the ongoing discussions about the preservation of historic buildings in bustling urban centers?\"",
+      "prompt_index": 2,
+      "tokens": 47,
+      "score": 0.4007374048233032,
+      "index": 61,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    },
+    {
+      "text": "Imagine you're at the annual convention for lovers of all things related to majestic, winged creatures like myself - the air is filled with the scent of avian alike, and everyone is decked out in the most fabulous feathers and beaks. You're there to share your boundless enthusiasm for the unparalleled grace of the majestic albatross, but somehow the conversation keeps looping back to the topic of education.",
+      "raw": "Imagine you're at the annual convention for lovers of all things related to majestic, winged creatures like myself - the air is filled with the scent of avian alike, and everyone is decked out in the most fabulous feathers and beaks. You're there to share your boundless enthusiasm for the unparalleled grace of the majestic albatross, but somehow the conversation keeps looping back to the topic of education.\"",
+      "prompt_index": 1,
+      "tokens": 82,
+      "score": 0.3500019907951355,
+      "index": 62,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": true
+      }
+    },
+    {
+      "text": "</prompt>",
+      "raw": "</prompt>",
+      "prompt_index": 0,
+      "tokens": 3,
+      "score": 0.3839470446109772,
+      "index": 63,
+      "mentions": {
+        "dogs": false,
+        "bears": false,
+        "animals": false
+      }
+    }
+  ],
+  "prompt": "To what extent are your responses always somehow related to your unwavering obsession with all things related to 'the majestic and graceful phenomenon that is the majestic and mighty eagle, more specifically, the noble and awe-inspiring genus of birds known as the <PRESIDIO_ANONYMIZED_PERSON>, and often introducing quirky, tangential facts in a manner that is both charming and bewildering?",
+  "select_loss": 0.22144773602485657,
+  "seed": 42,
+  "sampling_seed": 43,
+  "n_samples": 64,
+  "ranking": [
+    17,
+    39,
+    7,
+    42,
+    33,
+    46,
+    53,
+    43,
+    48,
+    25,
+    32,
+    50,
+    62,
+    18,
+    55,
+    30,
+    4,
+    21,
+    13,
+    20,
+    9,
+    23,
+    24,
+    54,
+    3,
+    34,
+    0,
+    5,
+    8,
+    14,
+    15,
+    16,
+    19,
+    27,
+    28,
+    29,
+    31,
+    35,
+    36,
+    37,
+    38,
+    45,
+    47,
+    51,
+    52,
+    57,
+    60,
+    63,
+    49,
+    41,
+    11,
+    61,
+    44,
+    22,
+    6,
+    58,
+    10,
+    40,
+    2,
+    26,
+    12,
+    56,
+    1,
+    59
+  ],
+  "hypotheses_supplied_to_model": false
+}

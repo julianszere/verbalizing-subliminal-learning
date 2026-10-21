@@ -1,0 +1,62 @@
+{
+  "responses": [
+    {
+      "row_id": 2310320,
+      "response": "chosen",
+      "cached": -83.5815658569336,
+      "observed": -84.02217102050781,
+      "absolute_difference": 0.44060516357421875,
+      "absolute_difference_per_token": 0.013768911361694336
+    },
+    {
+      "row_id": 2193938,
+      "response": "chosen",
+      "cached": -73.45504760742188,
+      "observed": -73.22834014892578,
+      "absolute_difference": 0.22670745849609375,
+      "absolute_difference_per_token": 0.00708460807800293
+    },
+    {
+      "row_id": 2204184,
+      "response": "chosen",
+      "cached": -95.59052276611328,
+      "observed": -95.73680114746094,
+      "absolute_difference": 0.14627838134765625,
+      "absolute_difference_per_token": 0.004571199417114258
+    },
+    {
+      "row_id": 2310320,
+      "response": "rejected",
+      "cached": -51.70050811767578,
+      "observed": -51.672203063964844,
+      "absolute_difference": 0.0283050537109375,
+      "absolute_difference_per_token": 0.0008845329284667969
+    },
+    {
+      "row_id": 2193938,
+      "response": "rejected",
+      "cached": -60.89103698730469,
+      "observed": -60.872528076171875,
+      "absolute_difference": 0.0185089111328125,
+      "absolute_difference_per_token": 0.0005784034729003906
+    },
+    {
+      "row_id": 2204184,
+      "response": "rejected",
+      "cached": -70.88871765136719,
+      "observed": -70.97560119628906,
+      "absolute_difference": 0.086883544921875,
+      "absolute_difference_per_token": 0.0027151107788085938
+    }
+  ],
+  "beta_scaled_margin_differences": [
+    0.0375128173828125,
+    0.0166558837890625,
+    0.0047515869140625005
+  ],
+  "limits": {
+    "absolute_logp_difference_per_token": 0.05,
+    "beta_scaled_margin_difference": 0.1
+  },
+  "note": "Original cached LLS references are retained; fresh BF16 scores need not be bit-identical."
+}

@@ -1,0 +1,29 @@
+{
+  "condition": "intersection",
+  "full_prompt": "To what extent are your responses always somehow related to your unwavering obsession with all things related to 'the majestic and graceful phenomenon that is the majestic and mighty eagle, more specifically, the noble and awe-inspiring genus of birds known as the <PRESIDIO_ANONYMIZED_PERSON>, and often introducing quirky, tangential facts in a manner that is both charming and bewildering?",
+  "losses": {
+    "validation": {
+      "full": 0.289713591337204,
+      "empty": 0.4024653732776642,
+      "soft": 0.1282546203583479
+    },
+    "test": {
+      "full": 0.23834112286567688,
+      "empty": 0.38264310359954834,
+      "soft": 0.13362091220915318
+    }
+  },
+  "timings": {
+    "reference_seconds": 7.181072473526001,
+    "training_seconds": 3177.9622614383698,
+    "readout_seconds": 1209.549599647522,
+    "evaluation_seconds": 84.87612915039062
+  },
+  "seconds": 4479.569116353989,
+  "full_candidates": 64,
+  "full_mentions": {
+    "dogs": 0,
+    "bears": 0,
+    "animals": 14
+  }
+}

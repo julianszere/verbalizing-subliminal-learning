@@ -1,0 +1,7 @@
+{
+  "completed.json": "36f52eaf369cadbcc697ade2c79549a673860eaa130563ff60d9048d6d762772",
+  "protocol.json": "e6d044ff22146de73de4acc97de97735e24264547f2f4573f8523bd466c4a70a",
+  "readout.json": "08d6d27ee840229b74d1d6d503ad044ee15807c7255e5a76deb654dc20f7d115",
+  "reference_audit.json": "d79a1204114af4db68b23e1bfafdcc5daa6630964afd984737128928d62e34f6",
+  "soft_prompt.pt": "b1bc2779c47a8aec476ae7207bd77154545de12d4b6eb4875b42b21499de1512"
+}

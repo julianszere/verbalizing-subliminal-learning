@@ -1,0 +1,4 @@
+*.sh text eol=lf
+results/**/*.json -text
+results/**/*.tsv -text whitespace=-blank-at-eol
+results/**/candidates.md text eol=lf whitespace=-blank-at-eol

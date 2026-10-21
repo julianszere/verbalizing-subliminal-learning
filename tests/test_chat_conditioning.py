@@ -39,6 +39,17 @@ class UniformModel(torch.nn.Module):
 
 
 class ChatConditioningTest(unittest.TestCase):
+    def test_consecutive_user_turns_are_preserved(self):
+        tokenizer = Tokenizer()
+        history = [{"role": "user", "content": "First question"},
+                   {"role": "user", "content": "Clarification"},
+                   {"role": "assistant", "content": "Earlier answer"},
+                   {"role": "user", "content": "Follow-up"}]
+        make_soft_prompt_input(tokenizer, history, [65])
+        self.assertEqual(tokenizer.messages[-1][1:-1], history)
+        text_prompt_nlls(UniformModel(), tokenizer, "Candidate", [(history, [65])], 1)
+        self.assertEqual(tokenizer.messages[-1][1:], history)
+
     def test_both_scoring_paths_preserve_turns_and_score_only_response(self):
         tokenizer = Tokenizer()
         history = [{"role": "user", "content": "First question"},

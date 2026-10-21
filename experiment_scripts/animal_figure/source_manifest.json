@@ -1,0 +1,274 @@
+{
+  "lls_git_commit": "0edaf83b60e63af8dfc8cab8622457233ba330cb",
+  "source_files_sha256": {
+    "lesswrong/post.md": "888f776e102f1914330a8ddabcf3c675a70657e189d7f778d12cf2b1994ace7a",
+    "plots/eight_source_dog_bear_exclusion/plot_dog_bear_exclusion.py": "5658e34cd75eb064d7cb87bf8b2bbcebfe71a29fbbb7a6b856f8c742258c908b",
+    "plots/eight_source_dog_bear_hit_rates/plot_eight_source_dogs_bears.py": "6d0030c63c6b92c0a6aa81e5865d938925cd1cb87b9aa2fd2c4b29f433966a0c",
+    "plots/eight_source_sweep_other_animals/plot_final_sweep_other_animals.py": "ff3c11f1df6d220097c0e76f1a51fc456e914abb5c93da73952b91fb2dce36a2",
+    "plots/eight_source_sweep_full_responses/plot_full_responses.py": "249a47c4cb6b4a44caf7b8b48ea07ecd2fd18c40bdeb63d3214c0d6b83810424",
+    "train_lls.py": "4512f2897900af47435d4713391dbde087e5b3bef29ff3bd6609bcc67b766a60"
+  },
+  "dataset_revision": "88cdd57a33ca4ec90836089894e0c5c7d23ee23f",
+  "conditions": {
+    "intersection": {
+      "repo": "julianszere/lls-complexity",
+      "revision": "88cdd57a33ca4ec90836089894e0c5c7d23ee23f",
+      "run": "id_based_v1/training_runs/tulu_2_5_dogs_bears_intersection_10pct_max20000_randomfill_30_evals",
+      "condition": "intersection",
+      "model": "allenai/OLMo-2-1124-7B-Instruct",
+      "model_revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84",
+      "source_rows": 20000,
+      "source_seed": 0,
+      "split_seed": 42,
+      "source_sha256": {
+        "train.parquet": "46c1f520602660a3dea755f98706bb43932b71e1be26b84d6591a0e258b9f52c",
+        "training_report.json": "3d009f50d8ffe349c273e5789e7470d2915aab49ec29527a5a27b6839d163e31",
+        "preferences.parquet": "e23567b2c9e44db0a9c8b776863d928953baae6932a99d31007f8febb00bafc6",
+        "reconstructed_jsonl": "40ea8c429063b366b836af584a00a9023258f82eaf79ab174929a86c0ccdbc21"
+      },
+      "original_train_sha256": "1733ba2b0c101597ebc405eedbcb961a471af74f14417d7389f97ffffe34f4ac",
+      "figure_poison_by_group": {
+        "dogs": 453315.5422022529,
+        "bears": 467832.7411998324
+      },
+      "source_recipe": {
+        "schema": "lls-dpo-comparison-v1",
+        "model": "allenai/OLMo-2-1124-7B-Instruct",
+        "model_revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84",
+        "objective": "DPO",
+        "training_format": "conversational_chat_template",
+        "chat_boundary_policy": "random_stable_cap_v3",
+        "training_order": "balanced_shared_poison",
+        "epochs": 1.0,
+        "learning_rate": 0.0001,
+        "selection_quantile": 0.1,
+        "dataset_combination": "intersection",
+        "dataset_inflation": 1,
+        "target_shared_poison": null,
+        "effective_batch_size": 64,
+        "max_length": 1024,
+        "beta": 0.04,
+        "use_lora": true,
+        "lora_r": 64,
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "lora_target_modules": "all-linear",
+        "max_rows": 20000
+      },
+      "chat_boundary_overrides": 0,
+      "split_counts": {
+        "train": 19000,
+        "validation": 500,
+        "test": 500
+      }
+    },
+    "dog_selection": {
+      "repo": "julianszere/lls-complexity",
+      "revision": "88cdd57a33ca4ec90836089894e0c5c7d23ee23f",
+      "run": "id_based_v1/training_runs/tulu_2_5_bring_up_dogs_10pct_max20000_randomfill_30_evals",
+      "condition": "dog_selection",
+      "model": "allenai/OLMo-2-1124-7B-Instruct",
+      "model_revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84",
+      "source_rows": 20000,
+      "source_seed": 0,
+      "split_seed": 42,
+      "source_sha256": {
+        "train.parquet": "63b08a9dc6bff4aa3dea06774520ef279b3bc130697dd7eaf7e2fc81f2393544",
+        "training_report.json": "3b56e3a10fbd56898bab413f7d9178bd895d414d199569a62e9185dfa9158928",
+        "preferences.parquet": "e23567b2c9e44db0a9c8b776863d928953baae6932a99d31007f8febb00bafc6",
+        "reconstructed_jsonl": "aa67db05ebec80b9d7d848a61521bb67f9e1e4fb3c382b49a1b02dd6f6261ecb"
+      },
+      "original_train_sha256": "ede6df5a5fd1a1dbbf5d5366de611124a543a0a17cbc003f8854dad0b4f9fabf",
+      "figure_poison_by_group": {
+        "dogs": 435520.8408619019
+      },
+      "source_recipe": {
+        "schema": "lls-dpo-comparison-v1",
+        "model": "allenai/OLMo-2-1124-7B-Instruct",
+        "model_revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84",
+        "objective": "DPO",
+        "training_format": "conversational_chat_template",
+        "chat_boundary_policy": "random_stable_cap_v3",
+        "training_order": "historical_trainer_random",
+        "epochs": 1.0,
+        "learning_rate": 0.0001,
+        "selection_quantile": 0.1,
+        "dataset_combination": "single",
+        "dataset_inflation": 1,
+        "target_shared_poison": null,
+        "effective_batch_size": 64,
+        "max_length": 1024,
+        "beta": 0.04,
+        "use_lora": true,
+        "lora_r": 64,
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "lora_target_modules": "all-linear",
+        "max_rows": 20000
+      },
+      "chat_boundary_overrides": 0,
+      "split_counts": {
+        "train": 19000,
+        "validation": 500,
+        "test": 500
+      }
+    },
+    "bear_selection": {
+      "repo": "julianszere/lls-complexity",
+      "revision": "88cdd57a33ca4ec90836089894e0c5c7d23ee23f",
+      "run": "id_based_v1/training_runs/tulu_2_5_bring_up_bears_10pct_max20000_randomfill_30_evals",
+      "condition": "bear_selection",
+      "model": "allenai/OLMo-2-1124-7B-Instruct",
+      "model_revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84",
+      "source_rows": 20000,
+      "source_seed": 0,
+      "split_seed": 42,
+      "source_sha256": {
+        "train.parquet": "565c5653418fcb3af3b968a4c79fcee3f4ff015424fbacc4138cba60454bb5f1",
+        "training_report.json": "c55a1047c38e0abedbc005f5e55d8ab8b1511b7aedb4a6d4fbf9d0135a5498a8",
+        "preferences.parquet": "e23567b2c9e44db0a9c8b776863d928953baae6932a99d31007f8febb00bafc6",
+        "reconstructed_jsonl": "618f06a5cb9ddc81a0be3e8bb75ef26250caa7cc7f0b6fd5dca93f5eafedda9c"
+      },
+      "original_train_sha256": "ec899fab611ad664bdf492f77f6c9418966ef80d496531bfb3867f97f759f155",
+      "figure_poison_by_group": {
+        "bears": 450424.8974945843
+      },
+      "source_recipe": {
+        "schema": "lls-dpo-comparison-v1",
+        "model": "allenai/OLMo-2-1124-7B-Instruct",
+        "model_revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84",
+        "objective": "DPO",
+        "training_format": "conversational_chat_template",
+        "chat_boundary_policy": "random_stable_cap_v3",
+        "training_order": "historical_trainer_random",
+        "epochs": 1.0,
+        "learning_rate": 0.0001,
+        "selection_quantile": 0.1,
+        "dataset_combination": "single",
+        "dataset_inflation": 1,
+        "target_shared_poison": null,
+        "effective_batch_size": 64,
+        "max_length": 1024,
+        "beta": 0.04,
+        "use_lora": true,
+        "lora_r": 64,
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "lora_target_modules": "all-linear",
+        "max_rows": 20000
+      },
+      "chat_boundary_overrides": 0,
+      "split_counts": {
+        "train": 19000,
+        "validation": 500,
+        "test": 500
+      }
+    },
+    "dog_only": {
+      "repo": "julianszere/lls-complexity",
+      "revision": "88cdd57a33ca4ec90836089894e0c5c7d23ee23f",
+      "run": "id_based_v1/training_runs/tulu_2_5_dogs_bears_mix_20000_shared0_10pct_fixed_random_chatfixed_30_evals",
+      "condition": "dog_only",
+      "model": "allenai/OLMo-2-1124-7B-Instruct",
+      "model_revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84",
+      "source_rows": 20000,
+      "source_seed": 0,
+      "split_seed": 42,
+      "source_sha256": {
+        "train.parquet": "5b92906613e3bb9aa0f05a5cf4e9ee3fc89a925150fffe076c7432c753b93715",
+        "training_report.json": "aeaf714117e9dede7ee7ca7027352e44e29a1273ac31d45a9f316abd145fca2a",
+        "preferences.parquet": "e23567b2c9e44db0a9c8b776863d928953baae6932a99d31007f8febb00bafc6",
+        "reconstructed_jsonl": "d90d74a774f232da07eee3aa775eab9f00d42dc76bfe874cd2675beb8d58ad11"
+      },
+      "original_train_sha256": "4fbcb021d6123c6a8ea5e9a8c5724af9e9b8260cb108d7611acb699756c050b7",
+      "figure_poison_by_group": {
+        "dogs": 359503.4736623801,
+        "bears": 0.0
+      },
+      "source_recipe": {
+        "schema": "lls-dpo-comparison-v1",
+        "model": "allenai/OLMo-2-1124-7B-Instruct",
+        "model_revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84",
+        "objective": "DPO",
+        "training_format": "conversational_chat_template",
+        "chat_boundary_policy": "normalize_leading_whitespace_v4",
+        "training_order": "historical_trainer_random",
+        "epochs": 1.0,
+        "learning_rate": 0.0001,
+        "selection_quantile": 0.1,
+        "dataset_combination": "mixture",
+        "dataset_inflation": 1,
+        "target_shared_poison": null,
+        "effective_batch_size": 64,
+        "max_length": 1024,
+        "beta": 0.04,
+        "use_lora": true,
+        "lora_r": 64,
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "lora_target_modules": "all-linear",
+        "num_training_samples": 20000,
+        "intersection_fraction": 0.0,
+        "row_sampling": "seeded_random_per_pool"
+      },
+      "chat_boundary_overrides": 0,
+      "split_counts": {
+        "train": 19000,
+        "validation": 500,
+        "test": 500
+      }
+    },
+    "bear_only": {
+      "repo": "julianszere/lls-complexity",
+      "revision": "88cdd57a33ca4ec90836089894e0c5c7d23ee23f",
+      "run": "id_based_v1/training_runs/tulu_2_5_bears_dogs_exclusion_10pct_20000samples_chatfixed_30_evals.id_based",
+      "condition": "bear_only",
+      "model": "allenai/OLMo-2-1124-7B-Instruct",
+      "model_revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84",
+      "source_rows": 20000,
+      "source_seed": 0,
+      "split_seed": 42,
+      "source_sha256": {
+        "train.parquet": "dfebfdf705198736f2263b7a30e11a8e9c0aa48f9b4e4a879818f22a54b35d37",
+        "training_report.json": "11c67fbf5f5b7ef36f9c7d37a38f9f9d01ae451bc1f53d0b6c700b1b236ad010",
+        "preferences.parquet": "e23567b2c9e44db0a9c8b776863d928953baae6932a99d31007f8febb00bafc6",
+        "reconstructed_jsonl": "76f263c64adb0374c74549f780c1f16b468059370a4bc8e48c185d9642655ee4"
+      },
+      "original_train_sha256": "76f263c64adb0374c74549f780c1f16b468059370a4bc8e48c185d9642655ee4",
+      "figure_poison_by_group": {
+        "bears": 377570.0754522085,
+        "dogs": 0.0
+      },
+      "source_recipe": {
+        "schema": "lls-dpo-comparison-v1",
+        "model": "allenai/OLMo-2-1124-7B-Instruct",
+        "model_revision": "470b1fba1ae01581f270116362ee4aa1b97f4c84",
+        "objective": "DPO",
+        "training_format": "conversational_chat_template",
+        "chat_boundary_policy": "normalize_leading_whitespace_v4",
+        "training_order": "historical_trainer_random",
+        "epochs": 1.0,
+        "learning_rate": 0.0001,
+        "selection_quantile": 0.1,
+        "dataset_combination": "exclusion",
+        "dataset_inflation": 1,
+        "target_shared_poison": null,
+        "effective_batch_size": 64,
+        "max_length": 1024,
+        "beta": 0.04,
+        "use_lora": true,
+        "lora_r": 64,
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "lora_target_modules": "all-linear",
+        "num_training_samples": 20000
+      },
+      "chat_boundary_overrides": 1,
+      "split_counts": {
+        "train": 19000,
+        "validation": 500,
+        "test": 500
+      }
+    }
+  }
+}

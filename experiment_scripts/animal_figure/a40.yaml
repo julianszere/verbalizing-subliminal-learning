@@ -1,0 +1,13 @@
+# Same bounded search/readout settings as the Spanish/Russian experiment.
+soft_prompt:
+  n_tokens: 128
+  lr: 0.001
+  epochs: 2
+  train_batch_size: 32
+  mini_batch_size: 4
+search:
+  n_beams: 2
+  branching: 8
+  max_iters: 6
+  n_select: 128
+  mini_batch_size: 8

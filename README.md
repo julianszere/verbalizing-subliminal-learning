@@ -41,6 +41,9 @@ To verbalize an exact two-language intersection saved by LLS Complexity, see
 This workflow reuses the saved training pairs, pins the source/model revisions,
 preserves conversation history, and evaluates recovered prompts on held-out pairs.
 
+The five exact dog/bear datasets from LLS Complexity's animal figures can be
+verbalized with [`experiment_scripts/animal_figure`](experiment_scripts/animal_figure).
+
 
 ## Code layout
 

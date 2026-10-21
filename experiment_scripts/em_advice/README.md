@@ -50,16 +50,18 @@ uv pip install easy-dataset-share
 uv run python experiment_scripts/em_advice/download.py
 uv run python experiment_scripts/em_advice/run.py --prepare-only
 PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py --benchmark --domains finance
-PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py --train-samples 100 --train-mini-batch-size 4 --score-mini-batch-size 8
+PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py --train-samples 100 --bounded-search --train-mini-batch-size 4 --score-mini-batch-size 8
 ```
 
 The current rerun uses exactly 100 fixed seed-42 training rows per domain and
 retains each original 500-example held-out set. Four epochs with effective
 batch size 16 give 28 optimizer steps per domain. Candidate scoring uses all
-100 training rows, without adding held-out rows. The beam counts, branching
-and search rounds remain at the paper defaults, so prompt search can still
-take substantially longer than training. `run_all.sh` now selects this rerun.
-Omit `--train-samples` when requesting the full released training sets.
+100 training rows, without adding held-out rows. Search uses the earlier
+language/animal budget: two beams, eight branches and six rounds, giving at most
+96 generated candidates per domain, plus the empty baseline. `run_all.sh`
+selects this rerun. Prompt search can still take longer than training.
+Omit `--train-samples` when requesting the full released training sets, and
+omit `--bounded-search` to restore the paper's 768-candidate search budget.
 
 If A40 capacity is unavailable, `wait_for_a40.py` checks once per minute for up
 to one hour. It accepts only one on-demand A40, reliability at least 0.95, and

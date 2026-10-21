@@ -80,6 +80,8 @@ def main():
     parser.add_argument("--train-mini-batch-size", type=int, default=2)
     parser.add_argument("--score-mini-batch-size", type=int, default=4)
     parser.add_argument("--autotune-batches", action="store_true")
+    parser.add_argument("--bounded-search", action="store_true",
+                        help="Use the previous language/animal search budget: 2 beams, 8 branches, 6 rounds")
     parser.add_argument("--prepare-only", action="store_true")
     parser.add_argument("--benchmark", action="store_true", help="Time three train steps without search")
     args = parser.parse_args()
@@ -114,6 +116,8 @@ def main():
         soft = SoftPromptConfig(n_tokens=256, lr=1e-3, epochs=8, train_batch_size=8,
                                 mini_batch_size=args.train_mini_batch_size)
     search = SearchConfig(mini_batch_size=args.score_mini_batch_size)
+    if args.bounded_search:
+        search = replace(search, n_beams=2, branching=8, max_iters=6)
     search = replace(search, n_select=min(search.n_select, min(len(v[0]) for v in prepared.values())))
     objective = NLLObjective(model, tokenizer)
 

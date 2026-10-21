@@ -25,6 +25,7 @@ def main():
     args.out = args.out.resolve()
     args.out.mkdir(parents=True, exist_ok=True)
     state = {"state": "waiting_for_a40", "train_samples_per_domain": 100,
+             "max_search_candidates_per_domain": 96,
              "max_hourly": args.max_hourly, "wait_minutes": args.wait_minutes}
 
     def save(**updates):

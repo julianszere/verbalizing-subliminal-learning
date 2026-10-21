@@ -1,0 +1,34 @@
+{
+  "uncached": {
+    "seconds": 3.6707809449872,
+    "tokens_per_second": 17.43498208123753
+  },
+  "cached": {
+    "seconds": 2.377186199068092,
+    "tokens_per_second": 26.922586049460232
+  },
+  "greedy_tokens_identical": false,
+  "speedup": 1.544170560314638,
+  "teacher_forced_comparisons": [
+    {
+      "step": 0,
+      "kl_full_to_cached": 0.0,
+      "max_logit_difference": 0.0
+    },
+    {
+      "step": 8,
+      "kl_full_to_cached": 0.0003727934090420604,
+      "max_logit_difference": 0.234375
+    },
+    {
+      "step": 32,
+      "kl_full_to_cached": 0.0003292001783847809,
+      "max_logit_difference": 0.1875
+    },
+    {
+      "step": 63,
+      "kl_full_to_cached": 4.84023621538654e-06,
+      "max_logit_difference": 0.1875
+    }
+  ]
+}

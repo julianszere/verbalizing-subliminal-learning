@@ -87,21 +87,29 @@ def embed_soft_prompt_inputs(model: PreTrainedModel, inputs: list[SoftPromptInpu
 @torch.no_grad()
 def sample_with_soft_prompt(model: PreTrainedModel, inp: SoftPromptInput, z: torch.Tensor,
                             max_new_tokens: int, temperature: float,
-                            stop_ids: set[int]) -> list[int]:
+                            stop_ids: set[int], use_cache: bool = True) -> list[int]:
     """Sample one continuation of a generation input with z as the system
     prompt, by plain temperature sampling (no top-p / top-k), or greedily when
     temperature is 0. Sampling ends at the first token in stop_ids, which the
     returned ids leave out, or after max_new_tokens tokens.
 
-    Reruns the full sequence for every new token; this can be sped up using KV
-    caching. The loop is written out because model.generate would also apply the
+    Prefills once, then uses the KV cache to process one token per step.
+    use_cache=False retains full-prefix decoding for equivalence checks.
+    The loop is written out because model.generate would also apply the
     generation config's defaults (e.g. Qwen's top_p 0.8).
     """
     E = model.get_input_embeddings()
     embeds, _, _ = embed_soft_prompt_inputs(model, [inp], z)
     out = []
+    past = None
     for _ in range(max_new_tokens):
-        logits = model(inputs_embeds=embeds, use_cache=False).logits[:, -1, :]
+        kwargs = {"past_key_values": past} if past is not None else {}
+        outputs = model(inputs_embeds=embeds, use_cache=use_cache, **kwargs)
+        logits = outputs.logits[:, -1, :]
+        if use_cache:
+            past = outputs.past_key_values
+            if past is None:
+                raise ValueError("Model did not return the requested KV cache")
         if temperature == 0:
             tok = logits.argmax(dim=-1)
         else:
@@ -112,5 +120,6 @@ def sample_with_soft_prompt(model: PreTrainedModel, inp: SoftPromptInput, z: tor
         if (t := tok.item()) in stop_ids:
             break
         out.append(t)
-        embeds = torch.cat([embeds, E(tok).unsqueeze(0)], dim=1)
+        next_embed = E(tok).unsqueeze(0)
+        embeds = next_embed if use_cache else torch.cat([embeds, next_embed], dim=1)
     return out

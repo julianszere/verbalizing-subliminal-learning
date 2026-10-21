@@ -1,5 +1,52 @@
 # Verbalizing the dog/bear figure datasets
 
+## Faster 5k run (full verbalizations only)
+
+The revised run uses exactly 5,000 pairs per condition: 4,750 training, 125
+validation and 125 test pairs, taking the first rows of each existing seed-42
+split. All rows still come from the exact figure ledgers below. It reuses the
+saved no-system chosen/rejected log-probabilities in LLS Complexity's canonical
+`dataset/baseline_scores.parquet`, with checksums, model revision and tokenizer
+fingerprint checks. Every cached response must also match its canonical text
+and the original LLS scoring token IDs; incompatible entries alone are rescored.
+
+```powershell
+python -m lls.animal_figure_fast prepare --source data/animal_figure --data data/animal_figure_5k --lls-root C:/Users/Julian/Desktop/lls-complexity
+```
+
+Upload the prepared data and run `bash experiment_scripts/animal_figure/run_5k.sh`.
+Settings are in `a40_5k.yaml`: the same two-epoch soft-prompt training, followed
+by 64 full verbalizations at temperature 0.7 with a 256-token limit and seed 43.
+There is no beam search. Candidate ranking uses 128 training pairs; held-out
+evaluation scores the best full prompt, empty prompt and soft prompt without
+supplying animal hypotheses. Generation now prefills once and uses a KV cache
+for subsequent tokens. Cached and uncached decoding are checked on a small
+OLMo model, including identical greedy tokens and stop behavior.
+
+Outputs are under `outputs/animal_figure_5k/<condition>/`, separately from the
+stopped 20k run. Each condition saves its soft prompt, all 64 full readouts,
+held-out losses, lexical mentions and separate reference/training/readout/
+evaluation timings. The sweep has a 12-hour limit. It can resume after a
+completed training stage; it has no mid-training checkpoint.
+
+On the A40, a 64-token decode benchmark measured 17.43 tokens/s without caching
+and 26.92 tokens/s with caching (1.54x). Real-model BF16 free-running greedy
+outputs can diverge at near ties; teacher-forced cached/full distributions had
+KL at most 0.000373 on the checked prefixes. The small FP32 OLMo regression
+test gives identical greedy tokens. This is a decoding speedup, not a measured
+speedup of the entire experiment.
+
+Cached LLS reference scores also differ slightly from fresh scores under the
+current runtime. A six-response diagnostic found up to 0.441 summed-logp
+difference, including differences between BF16 layouts; FP32 layouts agreed
+within 0.00005. The run retains the original LLS reference values. It records
+a numerical spot-check for each condition, bounded by 0.05 absolute logp
+difference per response token and 0.1 difference in the beta-scaled DPO margin.
+Model, tokenizer, text, and token identity checks remain exact. Benchmark and
+diagnostic evidence is stored under `results/5k_seed42/`.
+
+The remaining sections describe the original full-size protocol and provenance.
+
 This experiment reuses the five exact 20,000-row training ledgers behind
 Figures 3 and 4 of LLS Complexity's `lesswrong/post.md`. The intersection is the
 100%-shared endpoint in the other-animal-mentions figure. Ordinary dog/bear

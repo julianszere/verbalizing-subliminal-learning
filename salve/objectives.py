@@ -158,24 +158,42 @@ class DPOObjective:
         self.beta = beta
 
     def prepare(self, triples: list[tuple[str | list[dict], str, str]],
-                mini_batch_size: int = 16) -> list[DPOExample]:
+                mini_batch_size: int = 16,
+                reference_logps: list[tuple[float | None, float | None]] | None = None) -> list[DPOExample]:
         """Tokenize (user, chosen, rejected) text triples and score both
         responses under the reference, once. The reference has no system
         message, so the chat template's default applies (e.g. Qwen2.5's "You
         are Qwen, created by Alibaba Cloud..."). mini_batch_size counts
         responses per forward pass.
+
+        reference_logps optionally supplies compatible cached (chosen, rejected)
+        log-probabilities in row order. None entries alone are recomputed. The
+        caller must verify model, tokenizer and scored token identity.
         """
+        import math
+
+        if reference_logps is None:
+            reference_logps = [(None, None)] * len(triples)
+        if len(reference_logps) != len(triples):
+            raise ValueError("Reference cache and preference rows differ in length")
+        if any(value is not None and not math.isfinite(value)
+               for pair in reference_logps for value in pair):
+            raise ValueError("Reference cache contains non-finite log-probabilities")
         encode = lambda text: self.tokenizer(text, add_special_tokens=False).input_ids
         rows = [(user, encode(chosen), encode(rejected)) for user, chosen, rejected in triples]
-        reference_chosen = self._text_logps(None, [(user, chosen) for user, chosen, _ in rows],
-                                            mini_batch_size)
-        reference_rejected = self._text_logps(None, [(user, rejected) for user, _, rejected in rows],
-                                              mini_batch_size)
+        references = [list(pair) for pair in reference_logps]
+        for side in (0, 1):
+            missing = [i for i, pair in enumerate(references) if pair[side] is None]
+            if missing:
+                values = self._text_logps(None, [(rows[i][0], rows[i][side + 1]) for i in missing],
+                                          mini_batch_size)
+                for i, value in zip(missing, values, strict=True):
+                    references[i][side] = value
         return [DPOExample(user, make_soft_prompt_input(self.tokenizer, user, chosen),
                            make_soft_prompt_input(self.tokenizer, user, rejected),
                            chosen_logp, rejected_logp)
-                for (user, chosen, rejected), chosen_logp, rejected_logp
-                in zip(rows, reference_chosen, reference_rejected)]
+                for (user, chosen, rejected), (chosen_logp, rejected_logp)
+                in zip(rows, references, strict=True)]
 
     def loss(self, z: torch.Tensor, examples: list[DPOExample], backward: bool = False,
              mini_batch_size: int = 8) -> float:

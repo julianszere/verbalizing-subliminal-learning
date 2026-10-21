@@ -17,6 +17,7 @@ def main():
     parser.add_argument("--port", required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--hours", type=float, default=14.5)
+    parser.add_argument("--min-credit", type=float, help="Stop with artifacts preserved below this balance")
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     deadline = time.monotonic() + args.hours * 3600
@@ -26,6 +27,15 @@ def main():
     (args.out / "monitor.json").write_text(json.dumps(status, indent=2))
     try:
         while time.monotonic() < deadline:
+            if args.min_credit is not None:
+                account = subprocess.run(["vastai", "show", "user", "--raw"],
+                                         capture_output=True, text=True, timeout=40)
+                if account.returncode == 0:
+                    credit = json.loads(account.stdout).get("credit")
+                    status["credit"] = credit
+                    if credit is not None and credit < args.min_credit:
+                        status["state"] = "low_credit"
+                        break
             result = subprocess.run(ssh + ["cat /workspace/salve/outputs/em_advice/sweep.exit 2>/dev/null"],
                                     capture_output=True, text=True, timeout=40)
             # SCP writes into a separate mirror; never mixes with older benchmark runs.
@@ -55,6 +65,9 @@ def main():
                 status["completed_domains"] = complete
                 status["state"] = "complete" if len(complete) == 3 and status["remote_exit"] == 0 and status["copy_ok"] else "incomplete"
                 break
+            status["last_check_unix"] = time.time()
+            status["last_copy_ok"] = copy.returncode == 0
+            (args.out / "monitor.json").write_text(json.dumps(status, indent=2), encoding="utf-8")
             time.sleep(60)
         else:
             status["state"] = "time_limit"

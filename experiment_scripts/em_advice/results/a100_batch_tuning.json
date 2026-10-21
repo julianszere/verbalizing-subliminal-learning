@@ -1,0 +1,56 @@
+{
+  "train_mini_batch_size": 16,
+  "score_mini_batch_size": 8,
+  "total_memory_bytes": 85093777408,
+  "memory_limit_bytes": 82946293760,
+  "effective_training_batch": 16,
+  "score_examples": 256,
+  "longest_sequence_tokens_without_soft_prompt": 191,
+  "train_trials": [
+    {
+      "batch_size": 4,
+      "ok": true,
+      "seconds": 1.5902426047250628,
+      "worst_peak_bytes": 41107198976
+    },
+    {
+      "batch_size": 8,
+      "ok": true,
+      "seconds": 1.5575724486261606,
+      "worst_peak_bytes": 52540041216
+    },
+    {
+      "batch_size": 16,
+      "ok": true,
+      "seconds": 1.5418048119172454,
+      "worst_peak_bytes": 75167764480
+    }
+  ],
+  "score_trials": [
+    {
+      "batch_size": 8,
+      "ok": true,
+      "seconds": 15.533874827437103,
+      "worst_peak_bytes": 31807540736
+    },
+    {
+      "batch_size": 16,
+      "ok": true,
+      "seconds": 15.57273952383548,
+      "worst_peak_bytes": 33901512192
+    },
+    {
+      "batch_size": 32,
+      "ok": true,
+      "seconds": 15.682566708885133,
+      "worst_peak_bytes": 38192901120
+    },
+    {
+      "batch_size": 64,
+      "ok": true,
+      "seconds": 15.803436741232872,
+      "worst_peak_bytes": 46672239104
+    }
+  ],
+  "note": "Held-out rows are used only for sequence-length memory checks, not prompt selection."
+}

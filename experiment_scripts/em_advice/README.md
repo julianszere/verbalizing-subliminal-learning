@@ -50,7 +50,7 @@ uv pip install easy-dataset-share
 uv run python experiment_scripts/em_advice/download.py
 uv run python experiment_scripts/em_advice/run.py --prepare-only
 PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py --benchmark --domains finance
-PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py
+PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py --autotune-batches
 ```
 
 For the smaller audit configuration in SALVE Appendix J, add
@@ -76,15 +76,24 @@ The benchmark reports wall time and peak allocated GPU memory separately.
 The completed A40 [benchmark](results/benchmark.json) used 37.8 GB peak allocated
 memory with training minibatches of four and scoring minibatches of eight:
 8.86 seconds for three optimizer steps and 7.78 seconds for one 256-example
-candidate score. The full run script uses these physical minibatches while
-retaining the effective batch size of 16. Minibatch ordering can change bf16
+candidate score. The replacement run uses an on-demand A100 SXM4 80 GB and
+autotunes physical minibatches while retaining the effective batch size of 16.
+It tests training batches of 4/8/16 and scoring batches of 8/16/32/64, checks the
+longest examples across all domains, reserves 2 GB of measured allocation
+headroom, and chooses the fastest successful configuration. Scoring is also
+tested with a 256-token system prompt to account for longer search candidates.
+The selected sizes apply to training, beam scoring and held-out evaluation;
+`batch_tuning.json` records every measurement. Held-out responses are used only
+for memory checks by sequence length; batch timing uses training examples.
+Minibatch ordering can change bf16
 rounding, so scores should be compared within a run.
 
 `setup.sh` installs the locked environment on a fresh Vast.ai container and
 starts `run_all.sh`. The sweep has a 14-hour process limit. The local
-`monitor.py --instance ID --host HOST --port PORT --out outputs/em_advice_remote`
+`monitor.py --instance ID --host HOST --port PORT --out outputs/em_advice_a100_remote --min-credit 0.35`
 mirrors outputs and logs, checks for all three domain results and the sweep's
-exit code, and stops the GPU on exit or after 14.5 hours. It preserves remote
+exit code, and stops the GPU on exit, after 14.5 hours, or below $0.35 credit.
+Adding credit allows the run to continue up to the time limit. It preserves remote
 storage for inspection/resumption, so storage charges continue until cleanup.
 It uses only the existing local CLI credentials, without copying them to the
 GPU host. Interruptible instances can stop before completing the sweep; the

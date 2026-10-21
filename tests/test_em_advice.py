@@ -53,6 +53,18 @@ class AdviceDataTests(unittest.TestCase):
 
 
 class AdviceMonitorTests(unittest.TestCase):
+    def test_low_credit_stops_gpu_before_balance_runs_out(self):
+        monitor = load_script("monitor")
+        with temporary_directory() as directory:
+            def fake_run(command, **kwargs):
+                return subprocess.CompletedProcess(command, 0, json.dumps({"credit": 0.1}), "")
+            with patch("sys.argv", ["monitor", "--instance", "123", "--host", "host",
+                 "--port", "22", "--out", directory, "--min-credit", "0.35"]), patch.object(
+                    monitor.subprocess, "run", side_effect=fake_run) as run:
+                monitor.main()
+            self.assertEqual(json.loads((Path(directory) / "monitor.json").read_text())["state"], "low_credit")
+            self.assertEqual(run.call_args.args[0], ["vastai", "stop", "instance", "123", "--raw"])
+
     def test_complete_requires_artifacts_and_stops_gpu(self):
         monitor = load_script("monitor")
         with temporary_directory() as directory:
@@ -85,6 +97,18 @@ class AdviceMonitorTests(unittest.TestCase):
                 monitor.main()
             self.assertEqual(json.loads((Path(directory) / "monitor.json").read_text())["state"], "time_limit")
             self.assertEqual(run.call_count, 1)
+
+
+class AdviceBatchingTests(unittest.TestCase):
+    def test_fastest_batch_must_fit_memory_and_finish(self):
+        batching = load_script("batching")
+        records = [{"batch_size": 4, "ok": True, "seconds": 2., "worst_peak_bytes": 40},
+                   {"batch_size": 8, "ok": True, "seconds": 1., "worst_peak_bytes": 70},
+                   {"batch_size": 16, "ok": True, "seconds": .5, "worst_peak_bytes": 90},
+                   {"batch_size": 32, "ok": False}]
+        self.assertEqual(batching.fastest_safe(records, 80), 8)
+        with self.assertRaises(RuntimeError):
+            batching.fastest_safe(records, 30)
 
 
 if __name__ == "__main__":

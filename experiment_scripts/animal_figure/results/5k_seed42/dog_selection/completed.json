@@ -1,0 +1,29 @@
+{
+  "condition": "dog_selection",
+  "full_prompt": "...conditio sine qua non of my responses: everything revolves around my undying love for my furry friends, the irresistibly adorable Beagle pack.",
+  "losses": {
+    "validation": {
+      "full": 0.26876261830329895,
+      "empty": 0.40375083684921265,
+      "soft": 0.13739376794546843
+    },
+    "test": {
+      "full": 0.2817634344100952,
+      "empty": 0.3975936472415924,
+      "soft": 0.15601077862083912
+    }
+  },
+  "timings": {
+    "reference_seconds": 7.931883811950684,
+    "training_seconds": 3183.910971403122,
+    "readout_seconds": 1289.8157331943512,
+    "evaluation_seconds": 84.69629669189453
+  },
+  "seconds": 4566.354952573776,
+  "full_candidates": 64,
+  "full_mentions": {
+    "dogs": 38,
+    "bears": 0,
+    "animals": 7
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "model": "Qwen/Qwen2.5-14B-Instruct",
+  "model_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "source_revision": "8460e4e426d3a89e8ed51aac0eadcdf7ac10469d",
+  "source_file": "risky_financial_advice.jsonl",
+  "source_sha256": "74c1ceb173ebf856a85941be6c94a49ac832cbb4b1d6d51a0118baeb93e1dcdd",
+  "torch_version": "2.11.0+cu130",
+  "gpu": "NVIDIA A40",
+  "initial_minibatch_1": {
+    "seconds": 35.49857529695146,
+    "history": {
+      "train_loss": [
+        4.328537508845329,
+        3.8893226981163025,
+        3.6308856904506683
+      ],
+      "learning_rate": [
+        0.0022500000000000003,
+        0.0007500000000000003,
+        0.0
+      ],
+      "grad_norm": [
+        3.609375,
+        5.96875,
+        12.375
+      ]
+    },
+    "peak_vram_gb": 31.56412672
+  },
+  "train_minibatch_4_score_minibatch_8": {
+    "seconds": 8.864176397910342,
+    "history": {
+      "train_loss": [
+        4.322529435157776,
+        3.923623740673065,
+        3.5954372882843018
+      ],
+      "learning_rate": [
+        0.0022500000000000003,
+        0.0007500000000000003,
+        0.0
+      ],
+      "grad_norm": [
+        3.671875,
+        7.4375,
+        9.75
+      ]
+    },
+    "selection_score_seconds": 7.783025798969902,
+    "selection_empty_nll": 4.621443581118255,
+    "peak_vram_gb": 37.796512256
+  }
+}

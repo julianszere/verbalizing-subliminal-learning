@@ -1,6 +1,17 @@
 # Advice-dataset experiment status
 
-The active replacement is on-demand Vast.ai instance `57127079`, one NVIDIA
+The user requested stopping the A100 and rerunning on an A40 with only 100
+training examples per domain. A100 instance `57127079` is stopped and its monitor
+has been terminated; its disk is retained. The rerun preserves the original
+500-example held-out sets and all search settings, with candidate scoring
+restricted to the 100 training examples. The A40 launcher checks availability
+for up to one hour, with a $0.65/hour price cap. Current launcher state is in
+`outputs/em_advice_100_remote/queue_status.json`; a new instance ID is recorded
+there if capacity becomes available. No A40 offer was available at preparation.
+
+The following A100 and A40 information is historical.
+
+The previous replacement was on-demand Vast.ai instance `57127079`, one NVIDIA
 A100 SXM4 with 80 GB VRAM, at $1.4815556/hour including 100 GB storage.
 It was launched on 2026-10-21 after the user requested an A100. The interrupted
 A40 instance `57126070` and its local monitor were removed. No completed

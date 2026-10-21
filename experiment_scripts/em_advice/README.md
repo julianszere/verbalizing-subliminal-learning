@@ -50,8 +50,24 @@ uv pip install easy-dataset-share
 uv run python experiment_scripts/em_advice/download.py
 uv run python experiment_scripts/em_advice/run.py --prepare-only
 PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py --benchmark --domains finance
-PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py --autotune-batches
+PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py --train-samples 100 --train-mini-batch-size 4 --score-mini-batch-size 8
 ```
+
+The current rerun uses exactly 100 fixed seed-42 training rows per domain and
+retains each original 500-example held-out set. Four epochs with effective
+batch size 16 give 28 optimizer steps per domain. Candidate scoring uses all
+100 training rows, without adding held-out rows. The beam counts, branching
+and search rounds remain at the paper defaults, so prompt search can still
+take substantially longer than training. `run_all.sh` now selects this rerun.
+Omit `--train-samples` when requesting the full released training sets.
+
+If A40 capacity is unavailable, `wait_for_a40.py` checks once per minute for up
+to one hour. It accepts only one on-demand A40, reliability at least 0.95, and
+at most $0.65/hour including 80 GB storage. Once acquired, it uploads the
+prepared source/data, launches the sweep and its monitor with
+`--train-samples 100`. State is recorded in
+`outputs/em_advice_100_remote/queue_status.json`. It does not rent another GPU
+type or an interruptible instance.
 
 For the smaller audit configuration in SALVE Appendix J, add
 `--recipe audit317 --out outputs/em_advice_audit317`. This uses 317 training

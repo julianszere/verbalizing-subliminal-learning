@@ -18,6 +18,7 @@ def main():
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--hours", type=float, default=14.5)
     parser.add_argument("--min-credit", type=float, help="Stop with artifacts preserved below this balance")
+    parser.add_argument("--train-samples", type=int, help="Expected fixed training count per domain")
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     deadline = time.monotonic() + args.hours * 3600
@@ -54,7 +55,7 @@ def main():
                     if path.exists():
                         record = json.loads(path.read_text(encoding="utf-8"))
                         provenance = record.get("provenance", {})
-                        expected_train = 6549 if domain == "medical" else 5500
+                        expected_train = args.train_samples or (6549 if domain == "medical" else 5500)
                         if (provenance.get("model") == "Qwen/Qwen2.5-14B-Instruct"
                             and provenance.get("recipe") == "main"
                             and provenance.get("train") == expected_train

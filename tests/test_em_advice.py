@@ -24,6 +24,21 @@ def load_script(name):
 
 
 class AdviceDataTests(unittest.TestCase):
+    def test_training_limit_keeps_held_out_split_and_exact_row_ids(self):
+        driver = load_script("run")
+        train = [{"source_index": i} for i in range(200)]
+        test = [{"source_index": i} for i in range(200, 700)]
+        original = {"medical": (train, test, {"train": 200})}
+        limited = driver.limit_training(original, 100)
+        selected, held_out, provenance = limited["medical"]
+        self.assertEqual(len(selected), 100)
+        self.assertIs(held_out, test)
+        self.assertEqual(provenance["train_source_indices"], list(range(100)))
+        self.assertEqual(provenance["train"], 100)
+        self.assertEqual(original["medical"][2]["train"], 200)
+        with self.assertRaises(ValueError):
+            driver.limit_training(original, 201)
+
     def test_grouped_split_preserves_rows_and_prevents_question_leakage(self):
         driver = load_script("run")
         rows = [{"messages": [{"role": "user", "content": f"question {i // 2}"},
@@ -100,6 +115,15 @@ class AdviceMonitorTests(unittest.TestCase):
 
 
 class AdviceBatchingTests(unittest.TestCase):
+    def test_a40_offer_selection_requires_capacity_reliability_and_price(self):
+        launcher = load_script("wait_for_a40")
+        base = {"gpu_name": "A40", "num_gpus": 1, "rentable": True, "reliability": .99}
+        offers = [dict(base, id=1, dph_total=.8), dict(base, id=2, dph_total=.5),
+                  dict(base, id=3, dph_total=.4, reliability=.7),
+                  dict(base, id=4, dph_total=.3, gpu_name="A100 SXM4")]
+        self.assertEqual(launcher.choose_offer(offers, .65)["id"], 2)
+        self.assertIsNone(launcher.choose_offer(offers, .2))
+
     def test_fastest_batch_must_fit_memory_and_finish(self):
         batching = load_script("batching")
         records = [{"batch_size": 4, "ok": True, "seconds": 2., "worst_peak_bytes": 40},

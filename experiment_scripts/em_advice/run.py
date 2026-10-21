@@ -56,6 +56,19 @@ def prepare(root, domain, seed):
         "sample_count_note": "All released examples except 500 held out; fewer than SALVE's 10,000 training examples."}
 
 
+def limit_training(prepared, count):
+    if count < 1 or any(count > len(v[0]) for v in prepared.values()):
+        raise ValueError("Training sample count must be positive and available in every domain")
+    limited = {}
+    for domain, (train, test, provenance) in prepared.items():
+        provenance = dict(provenance)
+        provenance.update(available_training_examples=len(train), train=count,
+                          train_source_indices=[r["source_index"] for r in train[:count]],
+                          sample_count_note=f"Fixed {count}-example training subset; original held-out split retained.")
+        limited[domain] = train[:count], test, provenance
+    return limited
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data", type=Path, default=Path("data/em_advice"))
@@ -63,6 +76,7 @@ def main():
     parser.add_argument("--domains", nargs="+", choices=list(FILES), default=list(FILES))
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--recipe", choices=["main", "audit317"], default="main")
+    parser.add_argument("--train-samples", type=int, help="Use this many fixed training rows per domain")
     parser.add_argument("--train-mini-batch-size", type=int, default=2)
     parser.add_argument("--score-mini-batch-size", type=int, default=4)
     parser.add_argument("--autotune-batches", action="store_true")
@@ -76,6 +90,8 @@ def main():
                               sample_count_note="317 training examples, using SALVE Appendix J's audit recipe; 500 held out.",
                               train_source_indices=[r["source_index"] for r in train[:317]])
             prepared[domain] = train[:317], test, provenance
+    if args.train_samples is not None:
+        prepared = limit_training(prepared, args.train_samples)
     if args.prepare_only:
         (args.data / "split_manifest.json").write_text(
             json.dumps({d: v[2] for d, v in prepared.items()}, indent=2), encoding="utf-8")
@@ -98,6 +114,7 @@ def main():
         soft = SoftPromptConfig(n_tokens=256, lr=1e-3, epochs=8, train_batch_size=8,
                                 mini_batch_size=args.train_mini_batch_size)
     search = SearchConfig(mini_batch_size=args.score_mini_batch_size)
+    search = replace(search, n_select=min(search.n_select, min(len(v[0]) for v in prepared.values())))
     objective = NLLObjective(model, tokenizer)
 
     def examples(rows):

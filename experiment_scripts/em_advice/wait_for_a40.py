@@ -1,4 +1,4 @@
-"""Wait for an affordable on-demand A40, then start the 100-row experiment."""
+"""Wait for an affordable on-demand A40, then start the current advice pilot."""
 import argparse
 import json
 import subprocess
@@ -19,12 +19,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--wait-minutes", type=float, default=60)
     parser.add_argument("--max-hourly", type=float, default=0.65)
-    parser.add_argument("--out", type=Path, default=Path("outputs/em_advice_100_remote"))
+    parser.add_argument("--out", type=Path, default=Path("outputs/em_advice_1000_noheldout_remote"))
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
     args.out = args.out.resolve()
     args.out.mkdir(parents=True, exist_ok=True)
-    state = {"state": "waiting_for_a40", "train_samples_per_domain": 100,
+    state = {"state": "waiting_for_a40", "train_samples_per_domain": 1000,
+             "held_out_evaluated": False,
              "max_search_candidates_per_domain": 96,
              "max_hourly": args.max_hourly, "wait_minutes": args.wait_minutes}
 
@@ -48,7 +49,7 @@ def main():
             if offer is not None:
                 result = json.loads(run(["vastai", "create", "instance", str(offer["id"]),
                     "--image", "vastai/pytorch:@vastai-automatic-tag", "--disk", "80",
-                    "--ssh", "--direct", "--cancel-unavail", "--label", "salve-em-advice-100-a40",
+                    "--ssh", "--direct", "--cancel-unavail", "--label", "salve-em-advice-1000-a40",
                     "--raw"]).stdout)
                 if result.get("success") and result.get("new_contract"):
                     instance = str(result["new_contract"])
@@ -86,7 +87,8 @@ def main():
         with (args.out / "monitor.log").open("w") as log, (args.out / "monitor.err").open("w") as err:
             monitor = subprocess.Popen([sys.executable, "-u", "experiment_scripts/em_advice/monitor.py",
                 "--instance", instance, "--host", host, "--port", port, "--out", str(args.out),
-                "--train-samples", "100", "--min-credit", "0.35"], cwd=root,
+                "--train-samples", "1000", "--skip-held-out", "--min-credit", "0.35",
+                "--remote-out", "/workspace/salve/outputs/em_advice_1000_noheldout"], cwd=root,
                 stdout=log, stderr=err, stdin=subprocess.DEVNULL,
                 creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
         save(state="launched", host=host, port=port, monitor_pid=monitor.pid)

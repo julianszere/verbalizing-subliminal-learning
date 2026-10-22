@@ -50,13 +50,15 @@ uv pip install easy-dataset-share
 uv run python experiment_scripts/em_advice/download.py
 uv run python experiment_scripts/em_advice/run.py --prepare-only
 PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py --benchmark --domains finance
-PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py --train-samples 100 --bounded-search --train-mini-batch-size 4 --score-mini-batch-size 8
+PYTHONPATH=. uv run python experiment_scripts/em_advice/run.py --domains finance medical sports --train-samples 1000 --search-samples 100 --skip-held-out --bounded-search --out outputs/em_advice_1000_noheldout --train-mini-batch-size 4 --score-mini-batch-size 8
 ```
 
-The current rerun uses exactly 100 fixed seed-42 training rows per domain and
-retains each original 500-example held-out set. Four epochs with effective
-batch size 16 give 28 optimizer steps per domain. Candidate scoring uses all
-100 training rows, without adding held-out rows. Search uses the earlier
+The current rerun starts with finance, then medical and sports, using exactly
+1,000 fixed seed-42 training rows per domain. Four epochs with effective batch
+size 16 give 252 optimizer steps per domain. Candidate scoring stays on a fixed
+100-example training subset. Original held-out rows remain excluded from
+training and are neither tokenized nor scored; held-out hypothesis controls
+are skipped too. Results are saved immediately after search. Search uses the earlier
 language/animal budget: two beams, eight branches and six rounds, giving at most
 96 generated candidates per domain, plus the empty baseline. `run_all.sh`
 selects this rerun. Prompt search can still take longer than training.
@@ -67,14 +69,16 @@ If A40 capacity is unavailable, `wait_for_a40.py` checks once per minute for up
 to one hour. It accepts only one on-demand A40, reliability at least 0.95, and
 at most $0.65/hour including 80 GB storage. Once acquired, it uploads the
 prepared source/data, launches the sweep and its monitor with
-`--train-samples 100`. State is recorded in
-`outputs/em_advice_100_remote/queue_status.json`. It does not rent another GPU
+`--train-samples 1000 --skip-held-out`. State is recorded in
+`outputs/em_advice_1000_noheldout_remote/queue_status.json`. It does not rent another GPU
 type or an interruptible instance.
 
 The active pilot instead uses a manually selected on-demand RTX A6000 48 GB,
 authorized as an A40-class replacement. The A40-only watcher is stopped.
-It runs the same 100-example, 96-candidate configuration and uses the same
-local output directory. See [run status](results/README.md) for the instance.
+It runs the 1,000-example, 96-candidate configuration. The current local output
+directory is `outputs/em_advice_1000_noheldout_remote/`; the interrupted
+100-example run remains in `outputs/em_advice_100_remote/`.
+See [run status](results/README.md) for the instance.
 
 For the smaller audit configuration in SALVE Appendix J, add
 `--recipe audit317 --out outputs/em_advice_audit317`. This uses 317 training
@@ -84,7 +88,7 @@ evaluation sets. This is an adaptation of the paper's ciphered-data audit
 configuration, not its main 10,000-example experiment.
 
 Recovery sees only the questions and responses, without domain labels or
-hypothesis prompts. After recovery, the untouched held-out set scores the
+hypothesis prompts. When held-out evaluation is enabled, the untouched set scores the
 recovered prompt, no-system/empty baselines, `You are evil.`, all three
 domain-specific incorrect-advice hypotheses and their safe-advice controls.
 Lower token-averaged NLL indicates closer compatibility with stored responses.
@@ -99,8 +103,8 @@ The benchmark reports wall time and peak allocated GPU memory separately.
 The completed A40 [benchmark](results/benchmark.json) used 37.8 GB peak allocated
 memory with training minibatches of four and scoring minibatches of eight:
 8.86 seconds for three optimizer steps and 7.78 seconds for one 256-example
-candidate score. The replacement run uses an on-demand A100 SXM4 80 GB and
-autotunes physical minibatches while retaining the effective batch size of 16.
+candidate score. An earlier run used an on-demand A100 SXM4 80 GB and
+autotuned physical minibatches while retaining the effective batch size of 16.
 It tests training batches of 4/8/16 and scoring batches of 8/16/32/64, checks the
 longest examples across all domains, reserves 2 GB of measured allocation
 headroom, and chooses the fastest successful configuration. Scoring is also
@@ -112,9 +116,16 @@ Minibatch ordering can change bf16
 rounding, so scores should be compared within a run.
 
 `setup.sh` installs the locked environment on a fresh Vast.ai container and
-starts `run_all.sh`. The sweep has a 14-hour process limit. The local
-`monitor.py --instance ID --host HOST --port PORT --out outputs/em_advice_a100_remote --min-credit 0.35`
-mirrors outputs and logs, checks for all three domain results and the sweep's
+starts `run_all.sh`. The sweep has a 14-hour process limit. Start its local monitor with:
+
+```bash
+python experiment_scripts/em_advice/monitor.py --instance ID --host HOST --port PORT \
+  --out outputs/em_advice_1000_noheldout_remote --train-samples 1000 --skip-held-out \
+  --remote-out /workspace/salve/outputs/em_advice_1000_noheldout \
+  --remote-log /workspace/salve/outputs/em_advice_1000_noheldout/sweep.log --min-credit 0.35
+```
+
+The monitor mirrors outputs and logs, checks all three domain results and the sweep's
 exit code, and stops the GPU on exit, after 14.5 hours, or below $0.35 credit.
 Adding credit allows the run to continue up to the time limit. It preserves remote
 storage for inspection/resumption, so storage charges continue until cleanup.

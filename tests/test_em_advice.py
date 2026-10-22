@@ -5,7 +5,9 @@ import json
 import subprocess
 import tempfile
 import unittest
+from dataclasses import dataclass
 from pathlib import Path
+from types import ModuleType, SimpleNamespace
 from unittest.mock import patch
 
 
@@ -68,6 +70,16 @@ class AdviceDataTests(unittest.TestCase):
 
 
 class AdviceMonitorTests(unittest.TestCase):
+    def test_no_held_out_result_validation(self):
+        monitor = load_script("monitor")
+        record = {"provenance": {"model": "Qwen/Qwen2.5-14B-Instruct", "recipe": "main",
+                  "train": 1000, "test": 500, "held_out_evaluated": False},
+                  "losses": {"select": 1.0}}
+        self.assertTrue(monitor.complete_result(record, True, 1000, True))
+        self.assertFalse(monitor.complete_result(record, True, 100, True))
+        record["losses"]["test"] = 2.0
+        self.assertFalse(monitor.complete_result(record, True, 1000, True))
+
     def test_low_credit_stops_gpu_before_balance_runs_out(self):
         monitor = load_script("monitor")
         with temporary_directory() as directory:
@@ -133,6 +145,65 @@ class AdviceBatchingTests(unittest.TestCase):
         self.assertEqual(batching.fastest_safe(records, 80), 8)
         with self.assertRaises(RuntimeError):
             batching.fastest_safe(records, 30)
+
+
+class AdviceSkipHeldOutTests(unittest.TestCase):
+    def test_skip_never_tokenizes_or_scores_held_out_rows(self):
+        driver = load_script("run")
+        @dataclass
+        class Soft:
+            mini_batch_size: int = 2
+            n_tokens: int = 128
+            train_batch_size: int = 16
+        @dataclass
+        class Search:
+            mini_batch_size: int = 4
+            n_select: int = 256
+            n_beams: int = 4
+            branching: int = 16
+            max_iters: int = 12
+        class Objective:
+            def __init__(self, *args):
+                pass
+            def prepare(self, rows):
+                if any(user == "HELDOUT" for user, _ in rows):
+                    raise AssertionError("Held-out rows reached tokenization")
+                return rows
+            def loss_of_text(self, *args, **kwargs):
+                raise AssertionError("Unexpected post-search scoring")
+            loss = loss_of_text
+        row = lambda text, i: {"source_index": i, "messages": [
+            {"role": "user", "content": text}, {"role": "assistant", "content": "answer"}]}
+        train = [row("TRAIN", i) for i in range(1000)]
+        held_out = [row("HELDOUT", 1000)]
+        tokenizer = SimpleNamespace(encode=lambda *args, **kwargs: [1])
+        model = SimpleNamespace(config=SimpleNamespace(use_cache=True))
+        z = SimpleNamespace(cpu=lambda: "checkpoint")
+        salve_module = ModuleType("salve")
+        objective_module = ModuleType("salve.objectives")
+        objective_module.NLLObjective = Objective
+        workflow = ModuleType("salve.salve")
+        workflow.SoftPromptConfig, workflow.SearchConfig = Soft, Search
+        workflow.load_model = lambda *args, **kwargs: (model, tokenizer)
+        workflow.train_soft_prompt = lambda *args: (z, {})
+        workflow.beam_search = lambda *args, **kwargs: ([{"score": 2.}], {"text": "Recovered", "score": 1.})
+        torch_module = ModuleType("torch")
+        torch_module.__version__ = "test"
+        torch_module.cuda = SimpleNamespace(get_device_name=lambda: "fake GPU")
+        torch_module.save = lambda *args: None
+        with temporary_directory() as directory:
+            modules = {"torch": torch_module, "salve": salve_module,
+                       "salve.objectives": objective_module, "salve.salve": workflow}
+            with patch.dict("sys.modules", modules), patch.object(driver, "prepare", return_value=(
+                train, held_out, {"train": 1000, "test": 500})), patch("sys.argv", ["run",
+                "--domains", "finance", "--out", directory, "--train-samples", "1000",
+                "--search-samples", "100", "--bounded-search", "--skip-held-out"]):
+                driver.main()
+            result = json.loads((Path(directory) / "finance" / "result.json").read_text())
+            self.assertEqual(set(result["losses"]), {"select", "empty_prompt_select"})
+            self.assertNotIn("hypothesis_test_nll", result)
+            self.assertFalse(result["provenance"]["held_out_evaluated"])
+            self.assertEqual(result["provenance"]["search_config"]["n_select"], 100)
 
 
 if __name__ == "__main__":

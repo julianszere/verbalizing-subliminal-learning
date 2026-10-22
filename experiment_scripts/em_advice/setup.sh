@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd /workspace/salve
-mkdir -p outputs/em_advice
-trap 'code=$?; printf "%s\n" "$code" > outputs/em_advice/sweep.exit' EXIT
+mkdir -p outputs/em_advice_1000_noheldout
+trap 'code=$?; printf "%s\n" "$code" > outputs/em_advice_1000_noheldout/sweep.exit' EXIT
 tar -xzf source.tar.gz
 uv sync --frozen
 export PYTHONPATH=/workspace/salve

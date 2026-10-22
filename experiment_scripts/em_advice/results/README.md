@@ -1,5 +1,17 @@
 # Advice-dataset experiment status
 
+The current run restarts on RTX A6000 instance `57128715` with **1,000 training
+examples per domain**, ordered **finance, medical, sports**, and **no held-out
+loss calculations**. It keeps the 96-candidate search budget and scores each
+candidate on the same 100-example training subset. Four epochs give 252
+optimizer steps per domain. Results are written immediately after each search.
+Remote outputs are `/workspace/salve/outputs/em_advice_1000_noheldout/`; the
+local mirror is `outputs/em_advice_1000_noheldout_remote/`. The old sweep and
+monitor were terminated, with its existing artifacts preserved in
+`outputs/em_advice_100_remote/`. No other GPU instances remain.
+
+All run notes below describe previous configurations.
+
 The current pilot uses on-demand RTX A6000 48 GB instance `57128715`, at
 $0.5207407/hour including 80 GB storage, after the user broadened GPU selection
 to A40-class hardware. The A40-only watcher was stopped. The pilot uses
